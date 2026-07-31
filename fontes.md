@@ -1,77 +1,85 @@
 # Fontes
 
-Páginas de **descoberta**, não campos de busca. São páginas de destaque,
-curadoria, tendência e home, onde o que aparece é o que está circulando
-agora sem ninguém ter digitado nada.
+Cada fonte tem duas portas: a **página de curadoria**, que é por onde a rodada
+aberta entra, e o **filtro de busca**, que é por onde a rodada com recorte
+entra.
 
 Todas exigem navegador que renderiza JS. Fetch de HTML puro devolve página
 vazia na maioria delas.
 
+Esta lista é piso, não teto. Se o recorte pedir uma fonte que não está aqui,
+use e registre no relatório da rodada.
+
+As URLs abaixo são ponto de partida. Se alguma não responder, procure a página
+equivalente na plataforma e atualize este arquivo.
+
 ## Primeira linha
 
-Cobrem volume e variedade. A varredura sempre passa por estas.
+| Fonte | Página de curadoria | Com recorte |
+|---|---|---|
+| Behance | `behance.net/galleries/best-of-behance` e as galerias por disciplina | busca por termo, com os filtros de campo criativo e de período recente |
+| Pinterest | home logada e a área de ideias em alta | busca por termo, e a partir de cada peça que agrupar bem, puxar as relacionadas |
+| Awwwards | site do dia e indicados recentes | busca e filtro por categoria |
+| Are.na | explore | busca por termo e por canal |
+| Siteinspire | mais recentes | filtro por estilo e por tipo |
 
-| Fonte | Onde olhar |
-|---|---|
-| Pinterest | home logada, aba de ideias em alta, e as páginas de categoria de design, arte e fotografia |
-| Behance | galerias curadas de graphic design, e a seleção de destaque da home |
-| Awwwards | site do dia e indicados recentes |
-| Are.na | explore |
-| Siteinspire | mais recentes |
-
-O Pinterest é a fonte mais produtiva para esta esteira, porque a mecânica de
-sugestão dele já é uma máquina de agrupar por semelhança visual. Aproveite:
-ao achar uma peça que agrupa bem, puxe as relacionadas dela.
+O Pinterest é a fonte mais produtiva da esteira, porque a mecânica de sugestão
+dele já é uma máquina de agrupar por semelhança visual. Quando uma peça
+agrupar bem, puxe as relacionadas: é onde aparece a rima que a busca não acha.
 
 ## Segunda linha
 
-Volume menor, sinal mais curado. Boas para confirmar um agrupamento que
-apareceu na primeira linha.
+Volume menor, sinal mais curado. Boas para cruzar fontes e confirmar um
+agrupamento que apareceu na primeira linha.
 
-| Fonte | Onde olhar |
+| Fonte | Página de curadoria |
 |---|---|
-| Brand New | reviews mais recentes |
+| Brand New | reviews recentes, em `underconsideration.com/brandnew` |
 | Fonts In Use | adicionados recentemente |
 | It's Nice That | home |
 | AIGA Eye on Design | home |
 | Creative Review | home |
+
+## Por recorte
+
+Quando a rodada tiver setor, vale ir onde aquele universo vive, mesmo fora
+das fontes acima: prêmios da categoria, publicações especializadas, catálogos
+e lojas do setor, contas de marca.
+
+Registre quais usou. É como esta lista cresce entre uma rodada e outra.
+
+## Difíceis
+
+Não insista. Custam tempo e devolvem pouco.
+
+- Dribbble, bloqueio agressivo. Se o screenshot funcionar, aproveite
+- Instagram, exige sessão e bloqueia rápido
+- The Brand Identity, não resolveu DNS no último teste; verificar endereço
+
+## Descartar sem ler
+
+Conteúdo de SEO produzido para vender template ou assinatura. Descreve
+tendência que ninguém pratica e contamina o agrupamento.
+
+- Blogs de marketplace de template
+- Listas de "top 10 tendências" em banco de imagem
+- Pacotes de asset à venda, mesmo dentro das fontes acima
 
 ## Cena brasileira
 
 O timing daqui é diferente e nem toda estética atravessa. Estúdios e perfis
 brasileiros a monitorar: a completar pelo Gab.
 
-Prioridade para quem tem site próprio, Behance ativo ou Are.na. Quem só
-posta em Instagram é difícil de ler automaticamente.
-
 | Estúdio ou perfil | Onde acompanhar |
 |---|---|
 | | |
 
-## Bloqueiam leitura automatizada
-
-Não insista. Custam tempo e devolvem pouco.
-
-- Dribbble, conteúdo carregado por JS com bloqueio agressivo
-- Instagram, exige sessão e bloqueia rápido
-- The Brand Identity, não resolveu DNS no último teste; verificar se o
-  endereço mudou
-
-## Descartar sem ler
-
-Conteúdo de SEO produzido para vender template ou assinatura. Ele descreve
-tendência que ninguém pratica e contamina o agrupamento.
-
-- Blogs de marketplace de template
-- Listas de "top 10 tendências" em site de banco de imagem
-- Pacotes de asset à venda, mesmo quando aparecem dentro das fontes acima
-
-## Nota sobre o que a busca por nome faz
+## Nota de método
 
 Registrado para não voltar atrás: buscar o nome de uma técnica devolve
 principalmente quem vende action e pacote, porque é quem escreve o nome da
 técnica no título. Estúdio aplicando em campanha titula o projeto com o nome
 da marca.
 
-Por isso a esteira parte de páginas de descoberta e não de busca. A busca por
-termo só entra na etapa 4, depois do agrupamento já formado.
+Por isso o filtro da etapa 1 usa termos de universo. Termo de técnica só
+aparece na etapa 6, depois do agrupamento formado.

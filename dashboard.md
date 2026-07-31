@@ -1,112 +1,138 @@
 # Dashboard: direção de arte e spec
 
 Arquivo único e estático em `docs/index.html`. Sem build, sem framework.
-CSS e JS embutidos. Regenerado quando uma prancha nova entra.
+CSS e JS embutidos. Regenerado a cada rodada.
+
+Precisa aguentar 400 imagens e 20 blocos sem travar.
 
 ## A tese
 
-Isso é um moodboard, então a imagem manda. O texto existe para defender a
-imagem, nunca para competir com ela.
+O valor da rodada é o volume, então a página abre provando o volume.
 
-A unidade da página é a **prancha**, não a tendência. Alguém abre para
-destravar ideia, então a página precisa entregar volume visual rápido e a
-leitura só quando a pessoa parar em algo.
+O hero não é título nem estatística: é a **malha completa da varredura**.
+Todas as peças aproveitadas, em miniatura, coladas umas nas outras, ocupando
+a tela ao carregar. Antes de qualquer palavra, a pessoa vê a quantidade de
+coisa que foi olhada por ela.
 
-O eixo de temperatura da versão anterior sai. Ele classificava estágio de
-ciclo com um método que não se sustentou, e manter um elemento gráfico
-forte apoiado em dado fraco é mentir com design.
+Os blocos abaixo são recortes dessa malha.
+
+## A regra de texto
+
+**Nenhum parágrafo aparece na página em repouso.**
+
+A defesa de cada bloco é cinco linhas rotuladas, uma frase cada, e a frase é
+curta. O rótulo vai em mono minúsculo, a frase em corpo. Isso é para ser lido
+em pé, de relance, no meio de uma reunião.
+
+```
+O QUE É      uma frase
+DE ONDE VEM  uma frase
+POR QUE AGORA uma frase
+ONDE ENCAIXA uma frase
+ONDE NÃO     uma frase
+```
+
+Abaixo delas, um único link discreto em mono escrito **contexto**. Clicar
+expande o parágrafo pesquisado da etapa 6, ali mesmo, sem sair da página. Ele
+começa recolhido e volta a recolher.
+
+Assim a explicação do movimento existe inteira, e quem quiser mergulhar
+mergulha, mas ninguém é obrigado a atravessar um paredão de texto para chegar
+nas imagens.
+
+Se uma das cinco linhas ficar com mais de uma frase, ela está errada. O
+excedente pertence ao contexto.
 
 ## Paleta
 
 ```
 --void        #0D0F1A   fundo
---surface     #161A2B   painéis
+--surface     #161A2B   painéis e barras
 --edge        #252A3D   divisores
 --paper       #E8E6E1   texto principal
---muted       #8A90A6   créditos e metadados
---live        #46D6A4   único acento, usado só em estado ativo
+--muted       #8A90A6   rótulos, créditos, metadados
+--live        #46D6A4   estado ativo e destaque de emergente
 ```
 
-Fundo escuro porque as peças precisam brilhar e o fundo precisa sumir.
-O acento aparece pouco: filtro ativo, link em hover. Nada mais.
+Fundo escuro porque as peças precisam brilhar e o fundo precisa sumir. O
+acento aparece pouco: bloco emergente, filtro ativo, link em hover.
 
 ## Tipografia
 
-- **Display:** Bricolage Grotesque, variável. Títulos de prancha e de bloco.
-  Grande e pouco.
-- **Corpo:** IBM Plex Sans. As três linhas de defesa.
-- **Dados:** IBM Plex Mono. Autor, data, contagem de peças.
+- **Display:** Bricolage Grotesque, variável. Só nomes de bloco. Grande e pouco.
+- **Corpo:** IBM Plex Sans. As cinco frases e o contexto.
+- **Dados:** IBM Plex Mono. Rótulos, autor, fonte, contagens, termos derivados.
 
-Metadado sempre em mono. Separa visualmente o fato da interpretação.
+Rótulo e metadado sempre em mono, e menores que o corpo. É o que faz as cinco
+linhas parecerem uma ficha e não um texto.
 
 ## Estrutura
 
-**Topo.** Nome do sistema em display, e em mono o total de pranchas e a data
-da última. Sem hero, sem estatística grande. A primeira prancha começa
-imediatamente abaixo, porque o conteúdo é o hero.
+**Malha da varredura.** Ocupa a primeira dobra. Miniaturas de 120 a 160px,
+gutter de 2px, sem legenda, sem moldura. Corta na dobra sugerindo continuação,
+não termina redondo.
 
-**Navegação.** Lista horizontal das pranchas por data e título, em mono,
-fixa no topo ao rolar. Clique salta para a prancha. Só isso.
+Sobreposto num canto, em mono pequeno: recorte da rodada, data, coletadas,
+aproveitadas, grupos. Cinco números soltos, sem cartão e sem ícone.
 
-**Prancha.** Abre com o título em display e o pedido original em uma linha,
-em mono. Depois, os blocos.
+**Barra de blocos.** Fixa ao rolar. Lista horizontal de todos os blocos em
+mono, emergentes primeiro e marcados com o acento. Clique salta. Com 20
+blocos ela rola horizontalmente, sem quebrar em duas linhas.
 
-**Bloco.** Layout em duas colunas assimétricas. À esquerda, com um terço da
-largura, o nome do bloco em display e as três linhas de defesa, fixos
-enquanto o bloco rola. À direita, as peças em masonry denso, alturas
-desiguais, gutter pequeno.
+**Bloco.** Duas colunas assimétricas. À esquerda, um terço: nome em display,
+tipo, se o nome é inventado, em quantas fontes apareceu, as cinco linhas e o
+link de contexto. Fica fixa enquanto o bloco rola. À direita, as peças em
+masonry denso, gutter pequeno, imagens encostando.
 
-**Ordem e peso dos blocos.** Blocos emergentes vêm primeiro na prancha, sempre,
-e recebem tratamento visual mais forte que os consolidados. Mais forte quer
-dizer mais espaço e mais escala: título em corpo maior, coluna de defesa mais
-larga, e uma coluna a menos no masonry, o que aumenta cada peça sem mudar o
-gutter. O consolidado vem depois, menor e mais apertado.
+Bloco emergente ganha o nome maior e um fio do acento na borda esquerda.
+Consolidado vem menor e sem fio. Sem badge colorida, sem etiqueta.
 
-A diferença é de hierarquia, nunca de rótulo. **Sem badge colorida, sem selo,
-sem etiqueta de "novo".** O emergente é o que interessa, e um moodboard mostra
-o que interessa dando tamanho a ele, não pendurando um adesivo em cima. Quem
-abre a página deve parar no bloco emergente porque ele é maior, não porque
-tem uma tarja avisando que é para parar ali.
+O bloco de avulsas fecha a página. No lugar das cinco linhas, uma só,
+dizendo que são peças que não rimaram com nada e que é onde costuma aparecer
+o que ainda não tem nome.
 
-Se a prancha só tiver consolidados, nada disso aparece e todos os blocos ficam
-iguais. A ênfase é comparativa: sem emergente para contrastar, ela não existe.
+**Peça.** Em repouso, só a imagem. No hover, autor, fonte e ano em mono no
+rodapé, com link para o original em nova aba. Clique abre lightbox com a
+versão full, que fecha no Esc e no clique fora e navega com as setas.
 
-As imagens encostam umas nas outras. Sem moldura, sem sombra, sem cantos
-arredondados. É prancha, não catálogo de produto.
-
-No mobile, a defesa vai para cima do masonry e para de ser fixa.
-
-**Peça.** Em repouso, só a imagem. No hover, autor e ano em mono no rodapé,
-com link para o original abrindo em nova aba. Clique amplia em lightbox,
-que fecha no Esc e no clique fora.
+**Rodadas anteriores.** Lista em mono no rodapé, por data e recorte. Cada
+rodada é uma página própria em `docs/`, não tudo na mesma.
 
 ## Filtros
 
-Busca por texto que casa título de prancha, nome de bloco e texto de defesa.
-Nada além disso. Filtro elaborado em moodboard é atrito.
+Busca por texto que casa nome de bloco, as cinco linhas e autor. Um toggle
+para mostrar só emergentes. Nada além disso.
+
+## Performance
+
+Não negociável, porque o volume quebra a página se for ignorado.
+
+- Thumbs de até 300px na malha e nos masonries; full só no lightbox
+- `loading="lazy"` em tudo abaixo da primeira dobra
+- `width` e `height` declarados em toda imagem, para não haver salto de layout
+- Masonry em CSS columns ou grid, sem biblioteca de JS
+- A malha renderiza progressivamente, não espera tudo carregar
 
 ## Movimento
 
-Imagens entram em fade curto conforme aparecem na viewport. Hover rápido,
-sem escala. Lightbox abre com fade.
+Miniaturas entram em cascata rápida no load, uma vez. Hover acende sem escala.
+Contexto expande deslizando. Lightbox abre em fade.
 
-Nada pulsa, nada flutua, sem parallax. `prefers-reduced-motion` desliga
-tudo e a página continua inteira.
+Nada pulsa, nada flutua, sem parallax. `prefers-reduced-motion` desliga tudo
+e a página continua inteira.
 
 ## Quality floor
 
-- Responsivo até 360px
-- Foco de teclado visível em peça, link e busca
+- Responsivo até 360px. No mobile a malha vira faixa de altura fixa com
+  scroll horizontal e a coluna de defesa vai para cima do masonry
+- Foco de teclado visível em peça, bloco, contexto e busca
 - Contraste AA no texto
 - Alt descrevendo a peça
-- Lazy loading nas imagens, porque prancha tem muita imagem
-- A página lê sem JS
 
 ## O que não fazer
 
 Sem gradiente animado. Sem glassmorphism na interface, que seria usar uma
-estética catalogada como decoração da ferramenta. Sem badge de estágio.
-Sem contador animado.
+estética catalogada como decoração da ferramenta que cataloga. Sem contador
+animado, sem cartão de estatística, sem parágrafo visível em repouso.
 
-A boldness está no masonry denso e na assimetria da coluna de defesa.
-Todo o resto é quieto.
+A boldness está na malha de abertura e na densidade. Todo o resto é quieto.
