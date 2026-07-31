@@ -97,6 +97,10 @@ o que ainda não tem nome.
 rodapé, com link para o original em nova aba. Clique abre lightbox com a
 versão full, que fecha no Esc e no clique fora e navega com as setas.
 
+Peça sem autor é normal e não é erro: mostre só a fonte, sem travessão solto,
+sem "autor desconhecido" e sem espaço reservado. O crédito encolhe, a imagem
+não muda de tamanho.
+
 **Rodadas anteriores.** Lista em mono no rodapé, por data e recorte. Cada
 rodada é uma página própria em `docs/`, não tudo na mesma.
 

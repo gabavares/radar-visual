@@ -94,7 +94,10 @@ domínios mais frequentes eram loja e site de reserva.
 Regra prática: se o termo é o nome de uma prateleira, ele devolve a prateleira.
 Fique no nome do território.
 
-**Sobre atribuição no Pinterest.** A fonte segue valendo, mas com o olho
-aberto: a maioria dos pins não tem autor nem link do original. Peça de
-Pinterest entra em grupo sustentado por peças com autoria; não sustenta grupo
-sozinha, porque a regra dos 3 autores da etapa 5 não teria como ser verificada.
+**Sobre atribuição no Pinterest.** A maioria dos pins não tem autor nem link do
+original, e isso **não** desqualifica a peça. O Pinterest é fonte de Camada 1
+inclusive sem atribuição, e um pin sem crédito sustenta grupo como qualquer
+outra peça. O que a etapa 5 pede é diversidade de origem, não lista de nomes.
+
+Quando o pin trouxer link de saída, registre. Quando não trouxer, siga: caçar
+autoria pin a pin custa muito e devolve pouco.

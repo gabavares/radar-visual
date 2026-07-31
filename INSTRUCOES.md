@@ -96,7 +96,13 @@ Três caminhos, nesta ordem de preferência:
    bloqueado. Resolve Pinterest e boa parte do que trava
 3. **Embed** por URL, como último recurso, sabendo que pode quebrar depois
 
-Sempre grave junto: autor, link do original e fonte de onde veio.
+Grave o que a fonte der: autor **quando houver**, link do original e fonte de
+onde veio. Peça sem crédito entra do mesmo jeito.
+
+Não gaste tempo caçando autoria. Se o nome não veio na listagem, siga. A imagem
+é o material da esteira; o crédito é metadado, e metadado ausente não invalida
+o que a peça mostra. Vale abrir um projeto para pegar o nome só quando ele
+estiver ali à mão, nunca como etapa obrigatória.
 
 ### Etapa 4: olhar e catalogar
 
@@ -122,10 +128,13 @@ que compartilham tipografia condensada esmagada contra a margem" é.
 
 Regras:
 
-- Mínimo de 3 autores diferentes por grupo. Dois é coincidência. Peça sem
-  atribuição pode entrar no grupo, mas não conta para os 3: quem sustenta o
-  grupo é quem tem nome. Um grupo inteiro sem autoria não é grupo fraco, é
-  grupo que não dá para auditar.
+- Mínimo de 3 peças de origens distintas por grupo. Dois é coincidência, e
+  três variações do mesmo projeto também. **Origem, não autoria:** o que não
+  pode é o grupo inteiro sair de uma mesma campanha, série ou prancha. Peça sem
+  crédito conta normalmente — o que sustenta o grupo é a repetição do
+  tratamento, não a lista de nomes.
+- Nunca descarte peça forte por falta de autor. Imagem interessante sem crédito
+  vale mais para a esteira que imagem morna assinada.
 - Você precisa descrever o traço compartilhado em **uma frase concreta e
   visual**. Se sair vago, tipo "estética moderna", o grupo é falso. Desfaça.
 - Uma peça pode entrar em mais de um grupo.
@@ -210,7 +219,8 @@ radar-visual/
   rodadas/
     AAAA-MM-DD-<slug>/
       rodada.md
-      refs/
+      refs/           imagem por peça, nomeada com o bloco
+
   docs/
     index.html
     assets/
