@@ -152,7 +152,7 @@ a{color:inherit}a:hover{color:var(--accent)}
 <header class="wrap mast" id="topo">
 <h1>Radar<em>Visual</em></h1>
 <p class="sub"><span>ARQUIVO <b>11 BLOCOS</b></span><span>PEÇAS <b>247</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>1</b></span><span>GAB TAVARES</span></p>
-<p class="stamp">Última atualização &nbsp;<b>2026-07-31 04:29</b></p>
+<p class="stamp">Última atualização &nbsp;<b>2026-07-31 04:31</b></p>
 <button class="themebtn" id="theme" type="button"><span data-l>Tema escuro</span><span data-d>Tema claro</span></button>
 </header>
 <div class="mosaic" id="mosaico">
@@ -936,7 +936,7 @@ lbi.src=b.getAttribute("data-full");lbi.width=b.getAttribute("data-w");lbi.heigh
 var lk=b.getAttribute("data-link");lbc.textContent=b.getAttribute("data-cap")+" \u2014 "+b.getAttribute("data-src");
 if(lk){var a=document.createElement("a");a.href=lk;a.target="_blank";a.rel="noopener noreferrer";a.textContent="original";lbc.appendChild(document.createTextNode(" \u00b7 "));lbc.appendChild(a);}
 lb.classList.add("on");lbx.focus();}
-function close(){lb.classList.remove("on");lbi.removeAttribute("src");if(last){last.focus();last=null}}
+function close(){lb.classList.remove("on");lbi.removeAttribute("src");lbi.alt="";if(last){last.focus();last=null}}
 document.addEventListener("click",function(e){
 var b=e.target.closest(".pc button,.mtile");if(b){last=b;show(shots.filter(vis).indexOf(b));return}
 if(e.target.closest("#lbx")||e.target===lb){close();return}
