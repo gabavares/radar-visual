@@ -85,14 +85,17 @@ O acento **muda** entre os modos, e isso não é enfeite: `#D8402A` sobre escuro
 cai para perto do mínimo, então o modo escuro abre para `#FF6A52`. Todos os
 pares medidos passam de AA — texto 15,9:1, metadado 6,4:1, acento 6,4:1.
 
-**Botão de tema** à direita da barra fixa, junto dos outros controles, escrito
-em mono: diz *escuro* quando está claro e *claro* quando está escuro, ou seja,
-nomeia o destino e não o estado. A escolha grava em `localStorage` e é relida
-por um script inline no `<head>`, antes da primeira pintura, senão a página
-pisca branca antes de escurecer.
+**Botão de tema** na abertura, logo abaixo da linha de última atualização,
+escrito em mono: `Tema escuro` quando está claro e `Tema claro` quando está
+escuro. Nomeia o destino, não o estado.
 
-Claro é o padrão. Não seguimos `prefers-color-scheme`: quem quiser escuro
-clica, e a partir daí a preferência é dele.
+**O padrão é o do aparelho.** A página lê `prefers-color-scheme` e abre no modo
+que o sistema já usa. Se a pessoa clicar no botão, a escolha dela grava em
+`localStorage` e passa a mandar; enquanto não clicar, a página continua
+acompanhando o sistema, inclusive se ele mudar com a página aberta.
+
+A preferência é relida por um script inline no `<head>`, antes da primeira
+pintura, senão a página pisca clara antes de escurecer.
 
 O acento aparece pouco: bloco emergente, filtro ativo, link em hover, e a
 segunda linha do nome na abertura.
@@ -116,9 +119,19 @@ Logo abaixo dessa linha, em mono menor e na cor de metadado, **última
 atualização** com data e hora da geração da página. É o que diz se o arquivo
 está fresco sem precisar abrir o repositório.
 
-**Barra fixa.** Carrega o logo `RADAR VISUAL — Gab Tavares` à esquerda, na
-mesma tipografia da abertura, reduzido. O logo é botão: clica e volta ao topo.
-Depois dele vêm os blocos, a busca e o toggle.
+**Barra fixa.** Três partes, e a divisão importa:
+
+- **Logo, à esquerda, imóvel.** `RADAR VISUAL` em display com `Gab Tavares` em
+  mono na linha de baixo, no acento. Não encolhe e não rola junto com a lista.
+  É botão: clica e volta ao topo.
+- **Miolo rolável**, em duas linhas: os filtros de recorte e mês em cima, a
+  lista de blocos embaixo. Só esta parte rola na horizontal, e o overflow fica
+  contido nela — a página nunca ganha barra de rolagem lateral.
+- **Toggle de emergentes, à direita, imóvel.**
+
+Os filtros vivem **só aqui**. Não há um segundo conjunto solto na página: dois
+lugares para o mesmo controle exigiriam sincronizar estado e é erro esperando
+acontecer. Como a barra é fixa, eles estão sempre à mão.
 
 Depois, o **mosaico**: três faixas horizontais empilhadas, encostadas umas nas
 outras, **sem moldura, sem borda e sem vão**. Não é carrossel em linha — as
@@ -185,17 +198,18 @@ não muda de tamanho.
 mês e de recorte. Não se cria página por rodada: o valor do arquivo é poder
 comparar dois meses sem trocar de endereço.
 
-**Rodapé.** Só a assinatura, em display grande e em duas linhas, alinhada à
-esquerda como a abertura:
+**Rodapé.** Só a assinatura, em corpo pequeno e leve, em duas linhas, alinhada
+à esquerda como a abertura:
 
 ```
-FEITO COM AMORZIN.
-GAB. =)              ← no acento
+Feito com amorzin.
+Gab. =)              ← no acento
 ```
 
-Fecha a página ecoando a abertura, que também é display em duas linhas com a
-segunda no acento. Nada de método, nada de contagem, nada de explicação — isso
-tudo vive nos arquivos `.md` do repositório, que é onde se lê método.
+Discreta de propósito: é despedida, não título. A abertura já carrega o display
+grande, e repetir o gesto no fim faria a página terminar gritando. Nada de
+método, nada de contagem, nada de explicação — isso tudo vive nos arquivos
+`.md` do repositório, que é onde se lê método.
 
 ## Alinhamento
 
@@ -226,12 +240,15 @@ A página é o arquivo inteiro, então o filtro é o que a torna navegável.
   existir. Um por vez.
 - **Mês.** Lista dos meses que têm rodada, do mais novo para o mais velho.
   Um por vez, mais a opção de todos.
-- **Busca** por texto que casa nome de bloco, as cinco linhas e o título da
-  peça.
 - **Toggle de emergentes.**
 
-Os quatro se combinam. Recorte e mês em linha própria acima da barra de
-blocos, porque são os dois eixos do arquivo e não filtros secundários.
+Os três se combinam, e valem para a página inteira: mosaico de abertura,
+blocos, lista da barra e varredura completa.
+
+**Sem busca por texto.** Foi removida de propósito. O arquivo se navega por
+recorte e por mês, que são os eixos que a esteira produz; caixa de busca num
+acervo deste tamanho promete precisão que ela não entrega e ocupa espaço na
+barra que os filtros usam melhor.
 
 Quando um filtro esvazia a página, diga em mono o que sobrou de fora. Nunca
 deixe a tela em branco sem explicação.

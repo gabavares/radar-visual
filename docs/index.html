@@ -11,11 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500&display=swap" rel="stylesheet">
-<script>try{var _t=localStorage.getItem("rv-theme");if(_t==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<script>try{var _t=localStorage.getItem("rv-theme");if(_t==="dark"||(!_t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
 <style>
 :root{--paper:#FAFAFA;--card:#F2F1EF;--ink:#17181D;--muted:#6F6C75;--line:#E4E2DE;--accent:#D8402A;--lbbg:rgba(250,250,250,.97);--shadow:rgba(23,24,29,.22);
 --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;
---mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;--bar:48px}
+--mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;--bar:74px}
 :root[data-theme="dark"]{--paper:#16171A;--card:#212327;--ink:#F2F1EE;--muted:#9C99A3;--line:#2D2F35;--accent:#FF6A52;--lbbg:rgba(22,23,26,.97);--shadow:rgba(0,0,0,.55)}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -34,6 +34,11 @@ a{color:inherit}a:hover{color:var(--accent)}
 .mast .sub b{color:var(--ink);font-weight:500}
 .stamp{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:9px 0 0}
 .stamp b{color:var(--ink);font-weight:500}
+.themebtn{display:inline-block;margin:16px 0 0;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line);padding:9px 13px;cursor:pointer;transition:color .2s,border-color .2s}
+.themebtn:hover{color:var(--accent);border-color:var(--accent)}
+.themebtn span[data-d]{display:none}
+:root[data-theme="dark"] .themebtn span[data-l]{display:none}
+:root[data-theme="dark"] .themebtn span[data-d]{display:inline}
 /* mosaico: tres faixas, sem moldura e sem vao, larguras naturais */
 .mosaic{overflow:hidden;padding:20px 0 0;display:grid;gap:2px;-webkit-mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)}
 .mrow{display:flex;gap:2px;width:max-content;animation:drift var(--d,90s) linear infinite;will-change:transform}
@@ -50,12 +55,16 @@ a{color:inherit}a:hover{color:var(--accent)}
 .chip{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;background:none;border:0;border-bottom:1px solid transparent;color:var(--muted);padding:3px 0;cursor:pointer;transition:color .2s,border-color .2s}
 .chip:hover{color:var(--ink)}
 .chip[aria-pressed=true]{color:var(--accent);border-bottom-color:var(--accent)}
-.bar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:center;padding:0 28px;min-height:var(--bar);overflow-x:auto;white-space:nowrap}
-.barlogo{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.02em;text-transform:uppercase;text-decoration:none;color:var(--ink);white-space:nowrap;flex:0 0 auto;padding:14px 0}
-.barlogo span{color:var(--accent)}
+.bar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:stretch;padding:0 28px;min-height:var(--bar)}
+.barscroll{flex:1 1 auto;min-width:0;overflow-x:auto;overflow-y:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:9px 0}
+.barscroll .frow{border-bottom:0;padding:0;gap:4px 12px;flex-wrap:nowrap;white-space:nowrap;width:max-content}
+.barscroll .frow .sep{margin-left:14px}
+.barlogo{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;text-decoration:none;color:var(--ink);white-space:nowrap;padding:9px 0}
+.barlogo b{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.02em;text-transform:uppercase;line-height:1.05}
+.barlogo span{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);line-height:1.4;margin-top:2px}
 .barlogo:hover{color:var(--accent)}
-.bar ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
-.bar a{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:15px 0;display:block}
+.bar ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;white-space:nowrap;width:max-content}
+.bar ul a{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:2px 0;display:block}
 .bar a:hover,.bar a:focus-visible{color:var(--ink)}
 .bar a.em{color:var(--accent)}
 .bar li.off{display:none}
@@ -127,7 +136,7 @@ a{color:inherit}a:hover{color:var(--accent)}
 .lbn{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);font-size:30px;cursor:pointer;padding:18px}
 .lbn:hover{color:var(--accent)}.lbp{left:8px}.lbf{right:8px}
 .foot{border-top:1px solid var(--line);margin-top:56px;padding:36px 0 72px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.foot .sig{font-family:var(--display);font-weight:800;font-size:clamp(30px,5vw,64px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;color:var(--ink);margin:0;text-align:left}
+.foot .sig{font-family:var(--body);font-weight:400;font-size:15px;line-height:1.5;letter-spacing:0;text-transform:none;color:var(--muted);margin:0;text-align:left}
 .foot .sig em{font-style:normal;display:block;color:var(--accent)}
 .foot p{margin:0 0 7px;max-width:92ch;line-height:1.8}
 .empty{display:none;font-family:var(--mono);font-size:12px;color:var(--muted);padding:56px 28px;line-height:1.9}
@@ -143,7 +152,8 @@ a{color:inherit}a:hover{color:var(--accent)}
 <header class="wrap mast" id="topo">
 <h1>Radar<em>Visual</em></h1>
 <p class="sub"><span>ARQUIVO <b>11 BLOCOS</b></span><span>PEÇAS <b>247</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>1</b></span><span>GAB TAVARES</span></p>
-<p class="stamp">Última atualização &nbsp;<b>2026-07-31 04:11</b></p>
+<p class="stamp">Última atualização &nbsp;<b>2026-07-31 04:22</b></p>
+<button class="themebtn" id="theme" type="button"><span data-l>Tema escuro</span><span data-d>Tema claro</span></button>
 </header>
 <div class="mosaic" id="mosaico">
 <div class="mrow" style="--d:92s;--mh:132px">
@@ -297,17 +307,15 @@ a{color:inherit}a:hover{color:var(--accent)}
 <button type="button" class="mtile" data-rec="mobile" data-mes="2026-07" data-full="assets/full/p-12.jpg" data-w="540" data-h="960" data-cap="hoco, acessório" data-src="Pinterest" data-link="https://br.pinterest.com/pin/20266267068818659/" aria-label="hoco, acessório"><img src="assets/thumb/p-12.jpg" width="300" height="533" alt="hoco, acessório" loading="lazy" decoding="async"></button>
 </div>
 </div>
-<div class="wrap filters">
+<nav class="bar" aria-label="Filtros e blocos">
+<a class="barlogo" href="#topo"><b>Radar Visual</b><span>Gab Tavares</span></a>
+<div class="barscroll">
 <div class="frow"><span>Recorte</span><button class="chip" data-f="rec" data-v="" aria-pressed="true">todos</button>
 <button class="chip" data-f="rec" data-v="mobile" aria-pressed="false">mobile</button>
 <button class="chip" data-f="rec" data-v="trend" aria-pressed="false">trend</button>
-</div>
-<div class="frow"><span>Mês</span><button class="chip" data-f="mes" data-v="" aria-pressed="true">todos</button>
+<span class="sep">Mês</span><button class="chip" data-f="mes" data-v="" aria-pressed="true">todos</button>
 <button class="chip" data-f="mes" data-v="2026-07" aria-pressed="false">2026-07</button>
 </div>
-</div>
-<nav class="bar" aria-label="Blocos">
-<a class="barlogo" href="#topo">Radar Visual <span>Gab Tavares</span></a>
 <ul>
 <li data-for="ilha-em-close"><a href="#ilha-em-close" class="em">Ilha em close</a></li>
 <li data-for="marca-palavra"><a href="#marca-palavra">Marca-palavra nua</a></li>
@@ -322,10 +330,8 @@ a{color:inherit}a:hover{color:var(--accent)}
 <li data-for="avulsas-mobile"><a href="#avulsas-mobile">Avulsas do mobile</a></li>
 <li data-for="varredura"><a href="#varredura">A varredura inteira</a></li>
 </ul>
-<div class="tools"><label class="sr" for="q">Buscar</label>
-<input id="q" type="search" placeholder="filtrar" autocomplete="off">
-<button class="tg" id="tg" type="button" aria-pressed="false">só emergentes</button>
-<button class="tg theme" id="theme" type="button" aria-pressed="false" aria-label="Alternar modo claro e escuro"><span data-l>escuro</span><span data-d>claro</span></button></div>
+</div>
+<div class="tools"><button class="tg" id="tg" type="button" aria-pressed="false">só emergentes</button></div>
 </nav>
 <main>
 <section class="blk blk--em" id="ilha-em-close" data-em="true" data-rec="mobile" data-mes="2026-07" data-hay="Ilha em close O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Da ilha circular que a Xiaomi criou com a Leica em 2022 e que Oppo e Vivo copiaram no ano seguinte. Sensor de uma polegada exige profundidade, a saliência virou ostentação e a peça passou a fotografá-la como joia. Lançamento de aparelho, acessório óptico e qualquer marca que venda precisão como argumento. Marca que precise parecer leve ou barata, porque o close de metal usinado comunica peso e preço. mobile OnePlus Nord N20 Realme P4 Pro Redmi Note 13 OPPO Find, microscópio 30x Fairphone 6, módulos">
@@ -943,25 +949,22 @@ ch.setAttribute("aria-pressed","true");state[f]=ch.getAttribute("data-v");filter
 });
 document.addEventListener("keydown",function(e){if(!lb.classList.contains("on"))return;
 if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1);});
-var q=document.getElementById("q"),tg=document.getElementById("tg");var chips=[].slice.call(document.querySelectorAll(".chip"));
+var tg=document.getElementById("tg");var chips=[].slice.call(document.querySelectorAll(".chip"));
 var secs=[].slice.call(document.querySelectorAll("section[data-hay]"));
 var pcs=[].slice.call(document.querySelectorAll(".mood--all .pc"));
 var tiles=[].slice.call(document.querySelectorAll(".mtile"));
 var navs=[].slice.call(document.querySelectorAll(".bar li"));var navMap={};navs.forEach(function(l){navMap[l.getAttribute("data-for")]=l});
 var empty=document.getElementById("empty");
 var state={rec:"",mes:"",em:false};
-function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
-secs.forEach(function(s){s._h=norm(s.getAttribute("data-hay"))});
-pcs.forEach(function(p){p._h=norm(p.getAttribute("data-t"))});
 function okRec(v){return !state.rec||(v||"").indexOf(state.rec)>-1}
 function okMes(v){return !state.mes||(v||"").indexOf(state.mes)>-1}
-function filter(){var t=norm(q.value.trim()),any=false;
+function filter(){var any=false;
 secs.forEach(function(s){
-var hit=okRec(s.getAttribute("data-rec"))&&okMes(s.getAttribute("data-mes"))&&(!t||s._h.indexOf(t)>-1)&&(!state.em||s.getAttribute("data-em")==="true");
+var hit=okRec(s.getAttribute("data-rec"))&&okMes(s.getAttribute("data-mes"))&&(!state.em||s.getAttribute("data-em")==="true");
 if(s.id==="varredura"&&state.em)hit=false;
 s.style.display=hit?"":"none";if(hit)any=true;
 var li=navMap[s.id];if(li)li.className=hit?"":"off";});
-pcs.forEach(function(p){var hit=okRec(p.getAttribute("data-rec"))&&okMes(p.getAttribute("data-mes"))&&(!t||p._h.indexOf(t)>-1);p.classList.toggle("off",!hit);});
+pcs.forEach(function(p){var hit=okRec(p.getAttribute("data-rec"))&&okMes(p.getAttribute("data-mes"));p.classList.toggle("off",!hit);});
 tiles.forEach(function(m){m.classList.toggle("off",!(okRec(m.getAttribute("data-rec"))&&okMes(m.getAttribute("data-mes"))));});
 empty.classList.toggle("on",!any);}
 var th=document.getElementById("theme");
@@ -970,7 +973,7 @@ syncTheme();
 th.addEventListener("click",function(){var d=document.documentElement.getAttribute("data-theme")==="dark";
 if(d){document.documentElement.removeAttribute("data-theme")}else{document.documentElement.setAttribute("data-theme","dark")}
 try{localStorage.setItem("rv-theme",d?"light":"dark")}catch(e){}syncTheme();});
-q.addEventListener("input",filter);
+try{var mq=matchMedia("(prefers-color-scheme: dark)");var onMq=function(e){if(!localStorage.getItem("rv-theme")){if(e.matches){document.documentElement.setAttribute("data-theme","dark")}else{document.documentElement.removeAttribute("data-theme")}syncTheme();}};if(mq.addEventListener)mq.addEventListener("change",onMq);}catch(e){}
 tg.addEventListener("click",function(){state.em=!state.em;tg.setAttribute("aria-pressed",state.em?"true":"false");filter()});
 })();
 </script>
