@@ -44,6 +44,11 @@ nome fixo dessa modalidade: quando o pedido for "roda sem termo" ou "vê o que
 está acontecendo", o recorte é `trend`, sempre, para o arquivo poder comparar
 uma leitura aberta com a seguinte.
 
+O recorte `trend` também aceita rodada com termo, inclusive a palavra `trend`,
+quando for isso que o Gab pedir. Nenhum termo é proibido nesta esteira: o que
+existe é registro do que cada um costuma devolver, no `fontes.md`, para a
+expectativa ficar calibrada antes de rodar.
+
 **Com recorte**, tipo "setor de mobile". Aí o recorte vira **filtro aplicado
 dentro das plataformas, antes de qualquer análise**.
 

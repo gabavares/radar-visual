@@ -56,17 +56,16 @@ excedente pertence ao contexto.
 ## Paleta
 
 ```
---paper       #F5F2EB   fundo, papel quente
---card        #FFFFFF   cartão da peça
+--paper       #FFFFFF   fundo, branco puro
 --ink         #17181D   texto principal
 --muted       #79757F   rótulos, créditos, metadados
---line        #E3DED4   divisores e bordas
+--line        #E6E3DD   divisores e bordas
 --accent      #D8402A   emergente, filtro ativo, link em hover
 ```
 
-Fundo claro e quente, de papel, porque a página é parede de moodboard e não
-projeção. A peça entra direto sobre o papel, sem
-cartão e sem sombra: o contraste entre o fundo quente e a imagem já basta.
+Branco puro, sem creme e sem textura. A página é galeria: a cor tem que vir das
+peças, e qualquer tom no fundo entra na conta e suja a leitura de paleta. A
+peça entra direto sobre o branco, sem cartão e sem sombra.
 
 O acento aparece pouco: bloco emergente, filtro ativo, link em hover, e a
 segunda linha do nome na abertura.
@@ -83,14 +82,31 @@ linhas parecerem uma ficha e não um texto.
 ## Estrutura
 
 **Abertura.** Nome da ferramenta em display enorme, caixa alta, duas linhas,
-a segunda no acento. Abaixo, em mono: recorte da rodada, data, coletadas, na
-página, grupos. Cinco números soltos, sem cartão e sem ícone.
+a segunda no acento. Abaixo, em mono: quantos blocos, quantas peças, quais
+recortes, quantos meses, e a assinatura. Números soltos, sem cartão e sem ícone.
 
-Depois, a **faixa**: miniaturas de altura fixa deslizando na horizontal em laço
-contínuo, **encostadas umas nas outras, sem moldura, sem borda e sem vão**. Uma
-fita de imagem contínua, não uma fileira de cartões. Pausa no hover, e cada
-miniatura abre no lightbox como qualquer outra peça — a imagem já está na
-página, então o clique não custa nada. Some com `prefers-reduced-motion`.
+Logo abaixo dessa linha, em mono menor e na cor de metadado, **última
+atualização** com data e hora da geração da página. É o que diz se o arquivo
+está fresco sem precisar abrir o repositório.
+
+**Barra fixa.** Carrega o logo `RADAR VISUAL — Gab Tavares` à esquerda, na
+mesma tipografia da abertura, reduzido. O logo é botão: clica e volta ao topo.
+Depois dele vêm os blocos, a busca e o toggle.
+
+Depois, o **mosaico**: três faixas horizontais empilhadas, encostadas umas nas
+outras, **sem moldura, sem borda e sem vão**. Não é carrossel em linha — as
+peças entram em ordem embaralhada e com larguras diferentes, para a parede ter
+ritmo em vez de fileira.
+
+As três faixas deslizam em laço contínuo, em velocidades diferentes, e a do
+meio anda no sentido oposto. Pausa no hover, e cada miniatura abre no lightbox
+— a imagem já está na página, então o clique não custa nada.
+
+**O mosaico obedece aos filtros.** Com recorte `mobile` e mês `2026-07`
+selecionados, ele mostra só peças daquele recorte e daquele mês. É a mesma
+regra da varredura: o filtro vale para a página inteira, não só para os blocos.
+
+Some com `prefers-reduced-motion`.
 
 **Imagem hero do bloco.** Uma peça do próprio bloco, grande, com véu escuro no
 pé e o nome em display por cima em branco. Move um pouco mais devagar que a
@@ -119,8 +135,12 @@ efeito de colagem.
 
 No hover a imagem sobe 4px e ganha um contorno fino no acento. Nada mais.
 
-**A varredura inteira.** Mesma linguagem de cartão, em colunas mais estreitas
-e seis por vez. Todas as peças coletadas, sem exceção. Legenda menor.
+**A varredura inteira.** Ocupa a **largura total da página**, sem a margem
+máxima que segura os blocos. Colunas estreitas, muitas por vez, legenda menor.
+Todas as peças coletadas, sem exceção.
+
+A quebra de largura é proposital: sinaliza que ali acabou a leitura de curador
+e começou o material bruto.
 
 O bloco de avulsas fecha a página. No lugar das cinco linhas, uma só,
 dizendo que são peças que não rimaram com nada e que é onde costuma aparecer
@@ -136,8 +156,16 @@ não muda de tamanho.
 
 **Rodadas anteriores.** Ficam **nesta mesma página**, alcançadas pelo filtro de
 mês e de recorte. Não se cria página por rodada: o valor do arquivo é poder
-comparar dois meses sem trocar de endereço. O rodapé lista as rodadas em mono,
-por mês, data e recorte, com a contagem de cada uma.
+comparar dois meses sem trocar de endereço.
+
+**Rodapé.** Uma linha só: `Feito com amorzin. Gab. =)`. Nada de método, nada de
+contagem, nada de explicação — isso tudo vive nos arquivos `.md` do repositório,
+que é onde se lê método. A página termina com assinatura e ponto.
+
+**Link do original.** Pinterest aceita `pinterest.com/pin/<id>/`. **Behance
+exige um segmento depois do id**: `behance.net/gallery/<id>/` devolve página não
+encontrada, e `behance.net/gallery/<id>/<slug>` abre. Qualquer slug serve, mas
+gere um a partir do título — o link fica legível e nunca vem vazio.
 
 ## Filtros
 

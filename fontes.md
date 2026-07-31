@@ -56,14 +56,18 @@ Não insista. Custam tempo e devolvem pouco.
 - Instagram, exige sessão e bloqueia rápido
 - The Brand Identity, não resolveu DNS no último teste; verificar endereço
 
-## Descartar sem ler
+## Olhar com desconfiança
 
-Conteúdo de SEO produzido para vender template ou assinatura. Descreve
-tendência que ninguém pratica e contamina o agrupamento.
+Nada aqui é proibido. São coisas que costumam entrar na varredura sem ser peça
+aplicada, e que por isso precisam passar pelo mesmo teste visual das outras:
+se comunicam, ficam; se são só embalagem de venda, caem na etapa 4.
 
 - Blogs de marketplace de template
 - Listas de "top 10 tendências" em banco de imagem
 - Pacotes de asset à venda, mesmo dentro das fontes acima
+
+O critério é sempre o mesmo e é visual: a peça mostra um tratamento ou só
+anuncia um? Se mostra, entra, venha de onde vier.
 
 ## Cena brasileira
 
@@ -94,15 +98,13 @@ domínios mais frequentes eram loja e site de reserva.
 Regra prática: se o termo é o nome de uma prateleira, ele devolve a prateleira.
 Fique no nome do território.
 
-**E não busque a palavra `trend`.** Testado em 2026-07-31 e registrado para não
-custar de novo: no Behance, metade da primeira página é relatório *sobre*
-tendência — Design Trends 2026, Trend Report 2027-28, CMF Trend Analysis. No
-Pinterest, a mesma palavra devolve moda e conteúdo de compra, com pin de
-afiliado. A palavra significa gênero editorial numa plataforma e vitrine de
-roupa na outra, e em nenhuma das duas significa design circulando.
+**Sobre a palavra `trend` como termo.** Testado em 2026-07-31: no Behance ela
+devolve muito relatório *sobre* tendência, e no Pinterest devolve moda e
+conteúdo de compra. Isso não é motivo para evitá-la — é só o que esperar. O
+gênero do relatório tem tratamento visual próprio e virou bloco catalogado.
 
-O recorte `trend` da esteira **não usa termo nenhum**: ele entra pelas páginas
-de curadoria, que é onde a tendência aparece aplicada em vez de anunciada.
+Use quando quiser esse material. Para ver estética aplicada em vez de anunciada,
+entre pelas páginas de curadoria.
 
 **Sobre atribuição no Pinterest.** A maioria dos pins não tem autor nem link do
 original, e isso **não** desqualifica a peça. O Pinterest é fonte de Camada 1
