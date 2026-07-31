@@ -131,7 +131,7 @@ a{color:inherit}a:hover{color:var(--accent)}
 <header class="wrap mast" id="topo">
 <h1>Radar<em>Visual</em></h1>
 <p class="sub"><span>ARQUIVO <b>11 BLOCOS</b></span><span>PEÇAS <b>247</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>1</b></span><span>GAB TAVARES</span></p>
-<p class="stamp">Última atualização &nbsp;<b>2026-07-31 03:51</b></p>
+<p class="stamp">Última atualização &nbsp;<b>2026-07-31 03:54</b></p>
 </header>
 <div class="mosaic" id="mosaico">
 <div class="mrow" style="--d:92s;--mh:132px">
@@ -909,7 +909,7 @@ setTimeout(function(){rv.forEach(function(e){e.classList.add("in")})},4000);}
 var px=[].slice.call(document.querySelectorAll("[data-px]")),tick=false;
 function para(){tick=false;px.forEach(function(im){var r=im.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform="translateY("+(p*-6).toFixed(2)+"%)"});}
 if(!reduce){addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(para)}},{passive:true});para();}
-var shots=[].slice.call(document.querySelectorAll(".pc button,.strip button")),cur=-1;
+var shots=[].slice.call(document.querySelectorAll(".pc button,.mtile")),cur=-1;
 var lb=document.getElementById("lb"),lbi=document.getElementById("lbi"),lbc=document.getElementById("lbc"),lbx=document.getElementById("lbx"),last=null;
 function vis(b){if(b.classList.contains("off"))return false;var f=b.closest(".pc");if(f&&f.classList.contains("off"))return false;var s=b.closest("section");if(s&&s.style.display==="none")return false;return true}
 function show(n){var list=shots.filter(vis);if(!list.length)return;if(n<0)n=list.length-1;if(n>=list.length)n=0;cur=n;var b=list[n];
@@ -919,7 +919,7 @@ if(lk){var a=document.createElement("a");a.href=lk;a.target="_blank";a.rel="noop
 lb.classList.add("on");lbx.focus();}
 function close(){lb.classList.remove("on");lbi.removeAttribute("src");if(last){last.focus();last=null}}
 document.addEventListener("click",function(e){
-var b=e.target.closest(".pc button,.strip button");if(b){last=b;show(shots.filter(vis).indexOf(b));return}
+var b=e.target.closest(".pc button,.mtile");if(b){last=b;show(shots.filter(vis).indexOf(b));return}
 if(e.target.closest("#lbx")||e.target===lb){close();return}
 if(e.target.closest("#lbp")){show(cur-1);return}
 if(e.target.closest("#lbf")){show(cur+1);return}
