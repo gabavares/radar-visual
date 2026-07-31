@@ -17,7 +17,7 @@ equivalente na plataforma e atualize este arquivo.
 
 | Fonte | Página de curadoria | Com recorte |
 |---|---|---|
-| Behance | `behance.net/galleries/best-of-behance` e as galerias por disciplina | busca por termo, com os filtros de campo criativo e de período recente |
+| Behance | `behance.net/galleries/best-of-behance` e as galerias por disciplina | busca por termo com `sort=recommended`. **Nunca passe `&time=`**: com ele a busca devolve o feed da galeria de design gráfico para qualquer termo, com o título da página trocando certo e o conteúdo não |
 | Pinterest | home logada e a área de ideias em alta | busca por termo, e a partir de cada peça que agrupar bem, puxar as relacionadas |
 | Awwwards | site do dia e indicados recentes | busca e filtro por categoria |
 | Are.na | explore | busca por termo e por canal |
@@ -83,3 +83,18 @@ da marca.
 
 Por isso o filtro da etapa 1 usa termos de universo. Termo de técnica só
 aparece na etapa 6, depois do agrupamento formado.
+
+**Segunda metade da mesma lição, do teste de mobile.** Termo de universo
+funciona largo, não fundo. `mobile` e `smartphone launch` devolvem peça
+aplicada; `power bank packaging` e `wireless earbuds campaign` caem no índice
+de compras e devolvem listagem de marketplace. Dos 1090 pins colhidos com
+termos de categoria de produto, 10% tinham qualquer link de saída, e os
+domínios mais frequentes eram loja e site de reserva.
+
+Regra prática: se o termo é o nome de uma prateleira, ele devolve a prateleira.
+Fique no nome do território.
+
+**Sobre atribuição no Pinterest.** A fonte segue valendo, mas com o olho
+aberto: a maioria dos pins não tem autor nem link do original. Peça de
+Pinterest entra em grupo sustentado por peças com autoria; não sustenta grupo
+sozinha, porque a regra dos 3 autores da etapa 5 não teria como ser verificada.

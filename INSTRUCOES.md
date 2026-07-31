@@ -9,10 +9,17 @@ Serve para destravar ideia e para achar o que está crescendo antes de ter nome.
 
 ## Dois princípios
 
-**Volume antes de conclusão.** Uma rodada que devolve 400 peças e 15
-agrupamentos vale mais que uma que devolve 3 tendências bem provadas. Julgar
-é trabalho humano e rápido; varrer é trabalho de máquina e lento. Não
-economize na varredura para poupar tempo do humano.
+**Agrupamento antes de volume.** O produto da rodada é o agrupamento: imagens
+que compartilham tratamento, o estilo identificado e catalogado. Varrer é o
+meio, não o fim. Uma varredura rasa e bem agrupada vale mais que uma funda e
+mal olhada, porque o que trava a esteira nunca foi achar imagem — é reconhecer
+o que se repete entre elas.
+
+Isto substitui a regra anterior, que pedia 300 a 500 peças por rodada. O teste
+de mobile mostrou por que: 2362 peças brutas não produziram um agrupamento a
+mais que a primeira página teria produzido, e a maior parte do volume era
+listagem de comércio. Volume alto não melhora o agrupamento, só aumenta o que
+precisa ser descartado.
 
 **Termo de universo, nunca termo de técnica.** Se a rodada tiver recorte,
 derive os termos do território, do produto e do público. Nunca de efeito
@@ -35,11 +42,17 @@ e é exatamente o sinal que interessa quando não há tema.
 **Com recorte**, tipo "setor de mobile". Aí o recorte vira **filtro aplicado
 dentro das plataformas, antes de qualquer análise**.
 
-Derive de 15 a 25 termos do universo: categoria de produto, subcategorias,
-público, momento de uso, ocasião, concorrentes, materiais, contextos culturais
-adjacentes. Para mobile isso vira coisa como lançamento de smartphone,
-acessório de celular, packaging de eletrônico, campanha de operadora,
-fotografia de produto tech, setup de mesa, cultura gamer mobile, wearables.
+Derive de 3 a 5 termos largos, que nomeiem o território de frente. Para mobile
+isso é `mobile`, `mobile phone`, `smartphone launch`. Termo largo devolve o que
+a plataforma considera melhor naquele território, que é o material de onde sai
+agrupamento.
+
+**Não desça para nome de categoria de produto.** `power bank packaging`,
+`wireless earbuds campaign`, `phone case` e afins caem no índice de compras e
+devolvem listagem de marketplace e foto de produto de e-commerce. É o irmão do
+problema do termo de técnica: termo de técnica devolve quem vende action, termo
+de categoria de produto devolve quem vende o produto. Os dois contaminam o
+agrupamento com peça que não foi feita para comunicar.
 
 Aplique esses termos como busca e como filtro de categoria nas plataformas.
 As páginas de curadoria continuam entrando, mas filtradas pelo recorte quando
@@ -58,13 +71,21 @@ Você tem liberdade para usar fontes fora do `fontes.md` se elas servirem
 melhor ao recorte. Registre quais usou.
 
 Use o navegador que renderiza JS. Fetch de HTML puro devolve página vazia na
-maioria dessas fontes.
+maioria dessas fontes. Onde a fonte exigir sessão, rode no Chrome do Gab pela
+extensão, que carrega os logins dele.
 
-**Meta: 300 a 500 peças coletadas.** Não filtre por assunto aqui. Nesta altura
-você ainda não sabe o que procura, e é assim que tem que ser.
+**Meta: a primeira página de cada fonte, e só.** Sem scroll infinito, sem
+paginar. O que a plataforma põe na primeira página já é o resultado da
+ordenação dela, e é esse o corte que interessa. Na prática dá algo entre 100 e
+200 peças somando as fontes.
 
-Rode em lotes salvando o progresso, para que uma falha no meio não perca a
-varredura inteira.
+**Não persiga recência.** Pegue o que a fonte considera melhor, não o que subiu
+ontem. Ordenação por data devolve kit de social media e peça gerada por IA;
+ordenação por relevância devolve trabalho que sustentou atenção, mesmo que
+tenha alguns anos. Estilo não vence por ser novo, vence por se repetir.
+
+Não filtre por assunto aqui. Nesta altura você ainda não sabe o que procura, e
+é assim que tem que ser.
 
 ### Etapa 3: capturar a imagem
 
@@ -101,15 +122,20 @@ que compartilham tipografia condensada esmagada contra a margem" é.
 
 Regras:
 
-- Mínimo de 3 autores diferentes por grupo. Dois é coincidência.
+- Mínimo de 3 autores diferentes por grupo. Dois é coincidência. Peça sem
+  atribuição pode entrar no grupo, mas não conta para os 3: quem sustenta o
+  grupo é quem tem nome. Um grupo inteiro sem autoria não é grupo fraco, é
+  grupo que não dá para auditar.
 - Você precisa descrever o traço compartilhado em **uma frase concreta e
   visual**. Se sair vago, tipo "estética moderna", o grupo é falso. Desfaça.
 - Uma peça pode entrar em mais de um grupo.
 - Registre em quantas **fontes diferentes** o grupo aparece. Um traço que
   aparece em três plataformas é mais forte que um que só aparece numa.
 
-**Meta: 10 a 20 grupos.** Se fechou 4, agrupou grosso demais. Quebre os
-grandes em recortes mais específicos.
+**Meta: 4 a 8 grupos.** Com varredura de primeira página é essa a faixa
+honesta. Se fechou 2, agrupou grosso demais: quebre os grandes em recortes mais
+específicos. Se passou de 10, provavelmente está separando por assunto sem
+perceber — releia se o traço de cada um é mesmo visual.
 
 **O que não agrupou não se joga fora.** Peça visualmente forte que não casou
 com nada vira bloco de avulsas. É frequentemente onde mora o que está

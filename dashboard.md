@@ -3,18 +3,20 @@
 Arquivo único e estático em `docs/index.html`. Sem build, sem framework.
 CSS e JS embutidos. Regenerado a cada rodada.
 
-Precisa aguentar 400 imagens e 20 blocos sem travar.
+Precisa aguentar 200 imagens e 10 blocos sem travar.
 
 ## A tese
 
-O valor da rodada é o volume, então a página abre provando o volume.
+O valor da rodada é o agrupamento, e agrupamento só se defende mostrando as
+peças juntas. Então a página abre com as peças, não com palavra.
 
 O hero não é título nem estatística: é a **malha completa da varredura**.
 Todas as peças aproveitadas, em miniatura, coladas umas nas outras, ocupando
-a tela ao carregar. Antes de qualquer palavra, a pessoa vê a quantidade de
-coisa que foi olhada por ela.
+a tela ao carregar. Antes de qualquer palavra, a pessoa vê o conjunto de onde
+os blocos foram tirados.
 
-Os blocos abaixo são recortes dessa malha.
+Os blocos abaixo são recortes dessa malha. A malha existe para que o recorte
+possa ser conferido: quem duvidar de um bloco rola para cima e olha o resto.
 
 ## A regra de texto
 
@@ -76,8 +78,8 @@ Sobreposto num canto, em mono pequeno: recorte da rodada, data, coletadas,
 aproveitadas, grupos. Cinco números soltos, sem cartão e sem ícone.
 
 **Barra de blocos.** Fixa ao rolar. Lista horizontal de todos os blocos em
-mono, emergentes primeiro e marcados com o acento. Clique salta. Com 20
-blocos ela rola horizontalmente, sem quebrar em duas linhas.
+mono, emergentes primeiro e marcados com o acento. Clique salta. Se a lista
+não couber, ela rola horizontalmente, sem quebrar em duas linhas.
 
 **Bloco.** Duas colunas assimétricas. À esquerda, um terço: nome em display,
 tipo, se o nome é inventado, em quantas fontes apareceu, as cinco linhas e o
