@@ -1,108 +1,77 @@
 # Fontes
 
-Ordenadas por confiança. A camada define o peso que a fonte tem na regra
-de evidência do `INSTRUCOES.md`.
+Páginas de **descoberta**, não campos de busca. São páginas de destaque,
+curadoria, tendência e home, onde o que aparece é o que está circulando
+agora sem ninguém ter digitado nada.
 
-## Camada 1: peça real, vale como evidência
+Todas exigem navegador que renderiza JS. Fetch de HTML puro devolve página
+vazia na maioria delas.
 
-Aqui existe peça publicada, não artigo falando sobre peça. É a única camada que
-conta para fechar o mínimo de 5 peças.
+## Primeira linha
 
-- Behance
-- Pinterest, inclusive sem autor identificado, nas condições abaixo
-- Dribbble
-- Are.na
-- Awwwards
-- Siteinspire
-- Fonts In Use
-- The Brand Identity
-- Brand New, da UnderConsideration
-- Cargo Collective e Readymag, para portfólio de estúdio
-- Instagram e site próprio de estúdios de referência
+Cobrem volume e variedade. A varredura sempre passa por estas.
 
-### Pinterest
+| Fonte | Onde olhar |
+|---|---|
+| Pinterest | home logada, aba de ideias em alta, e as páginas de categoria de design, arte e fotografia |
+| Behance | galerias curadas de graphic design, e a seleção de destaque da home |
+| Awwwards | site do dia e indicados recentes |
+| Are.na | explore |
+| Siteinspire | mais recentes |
 
-Pinterest entra na Camada 1 porque é onde a peça aparece primeiro e onde a cena
-que não publica em portfólio indexado é visível. Descartá-lo por falta de
-atribuição custaria mais evidência real do que protege.
+O Pinterest é a fonte mais produtiva para esta esteira, porque a mecânica de
+sugestão dele já é uma máquina de agrupar por semelhança visual. Aproveite:
+ao achar uma peça que agrupa bem, puxe as relacionadas dela.
 
-Antes de salvar, tente rastrear o pin até a origem: link do pin, busca reversa
-de imagem, marca d'água, assinatura na peça. Rastreou, registra autor, data e
-link como qualquer outra peça de Camada 1.
+## Segunda linha
 
-Não rastreou, a peça **ainda entra**, marcada como não atribuída, com o link do
-pin e a data em que foi encontrada. Ela conta para o mínimo de 5 peças.
+Volume menor, sinal mais curado. Boas para confirmar um agrupamento que
+apareceu na primeira linha.
 
-O que ela não faz é contar para o mínimo de 4 autores diferentes, porque não há
-como saber se duas peças não atribuídas são do mesmo estúdio. Não é uma regra
-de mérito, é aritmética: contar autor desconhecido como autor distinto deixaria
-qualquer candidata fechar evidência com um único autor prolífico.
-
-Na prática: 5 peças podem incluir não atribuídas, mas pelo menos 4 autores
-distintos precisam estar identificados por nome.
-
-## Camada 2: contexto, nunca evidência
-
-Publicação editorial de design. Serve para entender de onde veio, quem nomeou
-e por que está voltando. Pode ser citada na ficha como contexto.
-
-Não pode ser usada para fechar o mínimo de peças, mesmo quando o artigo mostra
-imagens. O que conta é a peça na fonte original, com autor identificado.
-
-- It's Nice That
-- AIGA Eye on Design
-- Creative Review
-- Design Week
-- PRINT Magazine
-- Communication Arts
-- Hypebeast e Highsnobiety, para cruzamento com cultura
-
-## Camada 3: usar com desconfiança explícita
-
-Conteúdo que fala sobre tendência sem mostrar prática. É onde mora o risco
-descrito na regra de evidência.
-
-Pode ser lido para levantar hipótese, e toda hipótese daqui entra direto em
-`suspeitas.md`, nunca em ficha.
-
-- Artigos de "tendências de design 20XX" publicados por agências
-- Medium e blogs de ferramenta
-- Pinterest Predicts, que é relatório de marketing da própria plataforma e não
-  se confunde com os pins: a plataforma é Camada 1, o relatório dela não
-
-## Não usar
-
-Descartar sem ler. São conteúdo de SEO produzido para vender template ou
-assinatura, e descrevem tendências que ninguém pratica.
-
-- Blogs de marketplace de template
-- Listas de "top 10 tendências" em site de banco de imagem
-- Agregadores que republicam sem crédito ao autor original, com a exceção
-  declarada do Pinterest
+| Fonte | Onde olhar |
+|---|---|
+| Brand New | reviews mais recentes |
+| Fonts In Use | adicionados recentemente |
+| It's Nice That | home |
+| AIGA Eye on Design | home |
+| Creative Review | home |
 
 ## Cena brasileira
 
-O recorte nacional importa porque nem toda estética atravessa, e o timing
-daqui é diferente do timing dos Estados Unidos.
+O timing daqui é diferente e nem toda estética atravessa. Estúdios e perfis
+brasileiros a monitorar: a completar pelo Gab.
 
-Estúdios e perfis brasileiros a monitorar: a completar pelo Gab. Esta é a
-parte que a pesquisa sozinha não resolve bem, porque a cena local vive mais
-em Instagram do que em portfólio indexado.
+Prioridade para quem tem site próprio, Behance ativo ou Are.na. Quem só
+posta em Instagram é difícil de ler automaticamente.
 
 | Estúdio ou perfil | Onde acompanhar |
 |---|---|
 | | |
 
-## Regra de crédito
+## Bloqueiam leitura automatizada
 
-Toda peça salva registra o que se sabe dela: autor, data e link quando existem,
-e o link do pin mais a data de descoberta quando o autor não foi rastreado.
+Não insista. Custam tempo e devolvem pouco.
 
-Peça não atribuída entra, e entra rotulada como tal. O que não pode acontecer é
-uma peça sem autor aparecer no dashboard como se tivesse um, ou desaparecer o
-fato de que ninguém sabe quem fez.
+- Dribbble, conteúdo carregado por JS com bloqueio agressivo
+- Instagram, exige sessão e bloqueia rápido
+- The Brand Identity, não resolveu DNS no último teste; verificar se o
+  endereço mudou
 
-Fora do Pinterest, a exigência de autor identificado continua valendo: nas
-outras fontes de Camada 1 a atribuição está lá, e não achá-la significa que não
-se procurou.
+## Descartar sem ler
 
+Conteúdo de SEO produzido para vender template ou assinatura. Ele descreve
+tendência que ninguém pratica e contamina o agrupamento.
+
+- Blogs de marketplace de template
+- Listas de "top 10 tendências" em site de banco de imagem
+- Pacotes de asset à venda, mesmo quando aparecem dentro das fontes acima
+
+## Nota sobre o que a busca por nome faz
+
+Registrado para não voltar atrás: buscar o nome de uma técnica devolve
+principalmente quem vende action e pacote, porque é quem escreve o nome da
+técnica no título. Estúdio aplicando em campanha titula o projeto com o nome
+da marca.
+
+Por isso a esteira parte de páginas de descoberta e não de busca. A busca por
+termo só entra na etapa 4, depois do agrupamento já formado.

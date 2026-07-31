@@ -1,162 +1,112 @@
 # Dashboard: direção de arte e spec
 
-Arquivo único e estático em `docs/index.html`. Sem build, sem framework,
-sem dependência externa além das fontes. CSS e JS embutidos.
-
-Regenerado a cada ciclo lendo as fichas em `tendencias/`.
+Arquivo único e estático em `docs/index.html`. Sem build, sem framework.
+CSS e JS embutidos. Regenerado quando uma prancha nova entra.
 
 ## A tese
 
-A página não é um catálogo alfabético. É um **eixo de temperatura**.
+Isso é um moodboard, então a imagem manda. O texto existe para defender a
+imagem, nunca para competir com ela.
 
-Um designer abre o dashboard e a primeira coisa que ele entende, antes de ler
-qualquer palavra, é o que está esquentando e o que já queimou. A posição de uma
-tendência na página é o dado mais importante dela, então a estrutura da página
-precisa ser o próprio ciclo de vida.
+A unidade da página é a **prancha**, não a tendência. Alguém abre para
+destravar ideia, então a página precisa entregar volume visual rápido e a
+leitura só quando a pessoa parar em algo.
 
-Isso é o oposto de um grid uniforme com badge de status. Badge você lê depois
-de já ter olhado errado.
+O eixo de temperatura da versão anterior sai. Ele classificava estágio de
+ciclo com um método que não se sustentou, e manter um elemento gráfico
+forte apoiado em dado fraco é mentir com design.
 
 ## Paleta
 
-Fundo escuro porque é moodboard: as peças precisam brilhar e o fundo precisa
-sumir. Mas o escuro é azul-tinta, não preto neutro.
-
 ```
---void        #0D0F1A   fundo da página
---surface     #161A2B   cards e painéis
---edge        #252A3D   bordas e divisores
---paper       #E8E6E1   texto principal, off-white quente
---muted       #8A90A6   texto secundário e créditos
+--void        #0D0F1A   fundo
+--surface     #161A2B   painéis
+--edge        #252A3D   divisores
+--paper       #E8E6E1   texto principal
+--muted       #8A90A6   créditos e metadados
+--live        #46D6A4   único acento, usado só em estado ativo
 ```
 
-A cor de destaque não é uma só. É uma **escala semântica de temperatura**, e
-ela codifica o estágio do ciclo em todo lugar que aparece:
-
-```
---nascendo    #3D9DF2   azul frio
---subindo     #46D6A4   verde-água
---auge        #F5C842   amarelo
---saturando   #E8734A   laranja queimado
---morto       #4A4E5C   cinza dessaturado
-```
-
-Nenhuma dessas cores é decoração. Se uma cor aparece na tela, ela está
-dizendo em que ponto do ciclo aquilo está.
+Fundo escuro porque as peças precisam brilhar e o fundo precisa sumir.
+O acento aparece pouco: filtro ativo, link em hover. Nada mais.
 
 ## Tipografia
 
-- **Display:** Bricolage Grotesque, variável. Usar com peso e largura extremos
-  nos nomes das tendências e nos títulos de faixa. É a face que carrega
-  personalidade, então ela aparece grande e pouco.
-- **Corpo:** IBM Plex Sans. Neutra, legível, sem competir com o display.
-- **Dados e créditos:** IBM Plex Mono. Autor, data, contagem de evidências,
-  slug. Tudo que é metadado vai em mono, o que separa visualmente fato de
-  interpretação.
+- **Display:** Bricolage Grotesque, variável. Títulos de prancha e de bloco.
+  Grande e pouco.
+- **Corpo:** IBM Plex Sans. As três linhas de defesa.
+- **Dados:** IBM Plex Mono. Autor, data, contagem de peças.
 
-Escala de tipo definida e respeitada. Nada de tamanho arbitrário no meio do
-documento.
+Metadado sempre em mono. Separa visualmente o fato da interpretação.
 
-## Estrutura da página
+## Estrutura
 
-**Topo: a barra de temperatura.**
+**Topo.** Nome do sistema em display, e em mono o total de pranchas e a data
+da última. Sem hero, sem estatística grande. A primeira prancha começa
+imediatamente abaixo, porque o conteúdo é o hero.
 
-Uma faixa horizontal única, dividida em cinco segmentos proporcionais ao número
-de tendências em cada estágio, pintada na escala acima. É o hero da página e
-substitui qualquer cartão de estatística.
+**Navegação.** Lista horizontal das pranchas por data e título, em mono,
+fixa no topo ao rolar. Clique salta para a prancha. Só isso.
 
-Clicar num segmento filtra a página inteira para aquele estágio. O segmento
-ativo ganha peso, os outros recuam.
+**Prancha.** Abre com o título em display e o pedido original em uma linha,
+em mono. Depois, os blocos.
 
-Ao lado, em mono, apenas a data do último ciclo e o total catalogado.
+**Bloco.** Layout em duas colunas assimétricas. À esquerda, com um terço da
+largura, o nome do bloco em display e as três linhas de defesa, fixos
+enquanto o bloco rola. À direita, as peças em masonry denso, alturas
+desiguais, gutter pequeno.
 
-**Corpo: faixas por estágio.**
+**Ordem e peso dos blocos.** Blocos emergentes vêm primeiro na prancha, sempre,
+e recebem tratamento visual mais forte que os consolidados. Mais forte quer
+dizer mais espaço e mais escala: título em corpo maior, coluna de defesa mais
+larga, e uma coluna a menos no masonry, o que aumenta cada peça sem mudar o
+gutter. O consolidado vem depois, menor e mais apertado.
 
-Cinco seções na ordem do ciclo, de nascendo a morto. Cada faixa abre com o nome
-do estágio em display grande, na cor do estágio, e uma linha em corpo explicando
-o que aquele estágio significa na prática para quem vai usar.
+A diferença é de hierarquia, nunca de rótulo. **Sem badge colorida, sem selo,
+sem etiqueta de "novo".** O emergente é o que interessa, e um moodboard mostra
+o que interessa dando tamanho a ele, não pendurando um adesivo em cima. Quem
+abre a página deve parar no bloco emergente porque ele é maior, não porque
+tem uma tarja avisando que é para parar ali.
 
-Dentro de cada faixa, grade masonry de cards. Alturas desiguais são desejáveis:
-é moodboard, não planilha.
+Se a prancha só tiver consolidados, nada disso aparece e todos os blocos ficam
+iguais. A ênfase é comparativa: sem emergente para contrastar, ela não existe.
 
-Faixa vazia não some, aparece com o vazio declarado. Um estágio sem nenhuma
-tendência é informação.
+As imagens encostam umas nas outras. Sem moldura, sem sombra, sem cantos
+arredondados. É prancha, não catálogo de produto.
 
-**Card.**
+No mobile, a defesa vai para cima do masonry e para de ser fixa.
 
-Dominado pela imagem principal da tendência. Sem moldura, sem sombra, sem
-cantos muito arredondados. A imagem encosta na borda do card.
-
-Sobre a imagem, no rodapé do card: nome em display, e em mono a contagem de
-evidências. Nada mais. O card em repouso é imagem, e a leitura de relance
-não é interrompida por metadado.
-
-No hover, a imagem escurece de leve e aparecem autor e data da peça em
-destaque, em mono, com link para o original.
-
-A peça em destaque do card é sempre uma peça atribuída. Existindo atribuída na
-ficha, é ela que representa a tendência, porque o card é a superfície onde o
-crédito tem menos espaço para caber.
-
-Uma linha fina na cor do estágio corre no topo do card. É o único elemento
-cromático fora da imagem.
-
-**Painel de ficha.**
-
-Clique no card abre painel lateral deslizante com a ficha completa: o que é,
-como se faz, de onde veio, onde encaixa, onde não usar.
-
-Dentro do painel, a galeria de refs em masonry. Cada imagem com autor, data
-e link para o original visíveis sem hover, em mono discreto abaixo da peça.
-O painel é onde alguém foi procurar informação, então aqui o crédito não se
-esconde: é como o designer que gostou de uma peça chega no trabalho completo
-daquele estúdio.
-
-Peça não atribuída aparece na mesma posição com `autor não identificado` em
-mono, na cor `--muted`, mais o link do pin e a data de descoberta. Nunca vazia
-e nunca só a imagem: o campo em branco lê como esquecimento, e o rótulo lê como
-o que é, um limite conhecido da pesquisa.
-
-O painel fecha no Esc e no clique fora.
+**Peça.** Em repouso, só a imagem. No hover, autor e ano em mono no rodapé,
+com link para o original abrindo em nova aba. Clique amplia em lightbox,
+que fecha no Esc e no clique fora.
 
 ## Filtros
 
-Além da barra de temperatura, um conjunto discreto em mono no topo do corpo:
-
-- Por cliente, lendo os recortes de `vocabulario.md`
-- Por bloco do vocabulário, técnica, movimento, tipografia, cor, material,
-  fotografia
-- Busca por texto, que casa nome e apelidos
-
-Filtros combinam. Estado sem resultado mostra o que foi filtrado e um caminho
-de volta, não uma tela morta.
+Busca por texto que casa título de prancha, nome de bloco e texto de defesa.
+Nada além disso. Filtro elaborado em moodboard é atrito.
 
 ## Movimento
 
-Contido, e a serviço da leitura.
+Imagens entram em fade curto conforme aparecem na viewport. Hover rápido,
+sem escala. Lightbox abre com fade.
 
-- A barra de temperatura preenche da esquerda para a direita no load, uma vez
-- Cards entram em fade curto conforme entram na viewport
-- Hover no card é rápido, sem escala exagerada
-- Painel desliza, não pisca
-
-Nada pulsa, nada flutua em loop, nada tem parallax. `prefers-reduced-motion`
-desliga tudo acima e mantém a página inteiramente funcional.
+Nada pulsa, nada flutua, sem parallax. `prefers-reduced-motion` desliga
+tudo e a página continua inteira.
 
 ## Quality floor
 
-- Responsivo até 360px, com as faixas virando scroll horizontal no mobile
-- Foco de teclado visível em card, filtro e painel
-- Contraste mínimo AA no texto sobre fundo escuro
-- Toda imagem com alt descrevendo a peça, não o nome do arquivo
-- Página abre e funciona sem JS para leitura básica do conteúdo
+- Responsivo até 360px
+- Foco de teclado visível em peça, link e busca
+- Contraste AA no texto
+- Alt descrevendo a peça
+- Lazy loading nas imagens, porque prancha tem muita imagem
+- A página lê sem JS
 
 ## O que não fazer
 
-Sem gradiente de fundo animado. Sem glassmorphism no chrome da interface, que
-seria usar uma das tendências catalogadas como decoração da ferramenta que
-cataloga. Sem contadores animados. Sem badge colorida redundante com a linha
-do card.
+Sem gradiente animado. Sem glassmorphism na interface, que seria usar uma
+estética catalogada como decoração da ferramenta. Sem badge de estágio.
+Sem contador animado.
 
-A boldness da página está inteira no eixo de temperatura. Todo o resto é
-quieto para que ele funcione.
+A boldness está no masonry denso e na assimetria da coluna de defesa.
+Todo o resto é quieto.
