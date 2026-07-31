@@ -53,9 +53,22 @@ vendendo serviço, e esse conteúdo descreve tendências que ninguém pratica.
 Para uma tendência ser catalogada, a pesquisa precisa encontrar:
 
 - no mínimo 5 peças reais publicadas
-- de no mínimo 4 autores ou estúdios diferentes
-- cada uma com autor identificado, data e link
+- de no mínimo 4 autores ou estúdios diferentes, todos identificados por nome
+- cada uma com data e link
 - publicadas nos últimos 18 meses
+
+A identificação não é formalidade de catalogação. Sem ela a regra acima é
+impossível de verificar, e a reavaliação de estágio do ciclo seguinte teria que
+refazer a pesquisa do zero.
+
+**Exceção do Pinterest.** Peça encontrada no Pinterest e não rastreável até o
+autor entra mesmo assim, rotulada como não atribuída, e conta para o mínimo de
+5 peças. Ela não conta para o mínimo de 4 autores, porque não há como saber se
+duas peças não atribuídas são do mesmo estúdio. Os 4 autores precisam ter nome.
+A condição completa está em `fontes.md`.
+
+Uma ficha inteira de peças não atribuídas nunca fecha evidência, e isso é
+intencional: sem saber quem está fazendo, não dá para classificar estágio.
 
 Artigo de tendência não conta como peça. Ele pode ser citado como contexto na
 ficha, mas nunca como evidência.
@@ -115,7 +128,8 @@ Origem e, se for revival, de qual período e por que está voltando agora.
 
 ## Evidências
 - Autor ou estúdio, título da peça, data, link
-- (mínimo 5, de no mínimo 4 autores)
+- Não atribuída, link do pin, encontrada em AAAA-MM
+- (mínimo 5 peças, das quais no mínimo 4 com autor identificado e distinto)
 
 ## Onde encaixa
 Clientes da casa onde faz sentido, com o motivo.
@@ -130,14 +144,24 @@ e o time usa a tendência no lugar errado.
 ## Imagens
 
 Salve em `tendencias/<slug>/refs/`, numeradas em sequência, com o nome do autor
-no arquivo: `01-nome-do-estudio.jpg`.
+no arquivo: `01-nome-do-estudio.jpg`. Peça não atribuída usa `nao-atribuida` no
+lugar do nome: `04-nao-atribuida.jpg`.
 
 Redimensione para no máximo 1200px no lado maior antes de copiar para
 `docs/assets/`. O repositório precisa continuar leve.
 
-As imagens são obra de terceiros e servem como referência interna de repertório.
-Toda peça no dashboard carrega crédito visível ao autor e link para o original.
-Nada daqui vai para deck de cliente ou peça publicada sem autorização.
+Data e link são obrigatórios em toda peça salva, e autor é obrigatório sempre
+que for rastreável. A razão é funcional antes de ser qualquer outra coisa: a
+regra de evidência exige 4 autores identificados, e a classificação de estágio
+depende de saber quem está fazendo e desde quando.
+
+Peça não atribuída carrega o rótulo, o link do pin e a data em que foi
+encontrada. O rótulo é obrigatório: não saber quem fez é um fato sobre a peça,
+e apagar esse fato é o que transforma o catálogo em moodboard.
+
+O repositório é público. As peças são referência de repertório para o time,
+e cada uma aparece no dashboard com autor e link para o original, de forma
+discreta. Nada daqui vai para deck de cliente ou peça publicada.
 
 ## Fluxo de trabalho
 

@@ -88,8 +88,15 @@ Dominado pela imagem principal da tendência. Sem moldura, sem sombra, sem
 cantos muito arredondados. A imagem encosta na borda do card.
 
 Sobre a imagem, no rodapé do card: nome em display, e em mono a contagem de
-evidências e o autor da peça em destaque. No hover, a imagem escurece de leve
-e o crédito completo aparece.
+evidências. Nada mais. O card em repouso é imagem, e a leitura de relance
+não é interrompida por metadado.
+
+No hover, a imagem escurece de leve e aparecem autor e data da peça em
+destaque, em mono, com link para o original.
+
+A peça em destaque do card é sempre uma peça atribuída. Existindo atribuída na
+ficha, é ela que representa a tendência, porque o card é a superfície onde o
+crédito tem menos espaço para caber.
 
 Uma linha fina na cor do estágio corre no topo do card. É o único elemento
 cromático fora da imagem.
@@ -99,9 +106,16 @@ cromático fora da imagem.
 Clique no card abre painel lateral deslizante com a ficha completa: o que é,
 como se faz, de onde veio, onde encaixa, onde não usar.
 
-Dentro do painel, a galeria de refs em masonry. Cada imagem com autor, data e
-link para o original, sempre visível, nunca só no hover. Crédito não é
-microcópia opcional aqui.
+Dentro do painel, a galeria de refs em masonry. Cada imagem com autor, data
+e link para o original visíveis sem hover, em mono discreto abaixo da peça.
+O painel é onde alguém foi procurar informação, então aqui o crédito não se
+esconde: é como o designer que gostou de uma peça chega no trabalho completo
+daquele estúdio.
+
+Peça não atribuída aparece na mesma posição com `autor não identificado` em
+mono, na cor `--muted`, mais o link do pin e a data de descoberta. Nunca vazia
+e nunca só a imagem: o campo em branco lê como esquecimento, e o rótulo lê como
+o que é, um limite conhecido da pesquisa.
 
 O painel fecha no Esc e no clique fora.
 
