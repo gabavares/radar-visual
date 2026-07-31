@@ -94,6 +94,16 @@ domínios mais frequentes eram loja e site de reserva.
 Regra prática: se o termo é o nome de uma prateleira, ele devolve a prateleira.
 Fique no nome do território.
 
+**E não busque a palavra `trend`.** Testado em 2026-07-31 e registrado para não
+custar de novo: no Behance, metade da primeira página é relatório *sobre*
+tendência — Design Trends 2026, Trend Report 2027-28, CMF Trend Analysis. No
+Pinterest, a mesma palavra devolve moda e conteúdo de compra, com pin de
+afiliado. A palavra significa gênero editorial numa plataforma e vitrine de
+roupa na outra, e em nenhuma das duas significa design circulando.
+
+O recorte `trend` da esteira **não usa termo nenhum**: ele entra pelas páginas
+de curadoria, que é onde a tendência aparece aplicada em vez de anunciada.
+
 **Sobre atribuição no Pinterest.** A maioria dos pins não tem autor nem link do
 original, e isso **não** desqualifica a peça. O Pinterest é fonte de Camada 1
 inclusive sem atribuição, e um pin sem crédito sustenta grupo como qualquer
