@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .r { fill: #17181D; }
+    .v { fill: #D8402A; }
+    @media (prefers-color-scheme: dark) {
+      .r { fill: #F2F1EE; }
+      .v { fill: #FF6A52; }
+    }
+    text {
+      font-family: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -2px;
+    }
+  </style>
+  <text class="r" x="2" y="46">R</text>
+  <text class="v" x="31" y="46">V</text>
+</svg>

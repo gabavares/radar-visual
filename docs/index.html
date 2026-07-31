@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Radar Visual — Gab Tavares</title>
 <meta name="description" content="Arquivo do Radar Visual: agrupamentos visuais por recorte e por mês, com a varredura inteira de cada rodada.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500&display=swap" rel="stylesheet">
@@ -20,9 +23,11 @@ a{color:inherit}a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrap{max-width:1680px;margin:0 auto;padding:0 28px}
+/* abertura, filtros e assinatura acompanham a borda do menu fixo */
+.mast,.filters,.foot .wrap{max-width:none;margin:0;padding-left:28px;padding-right:28px}
 .js .rv{opacity:0;transform:translateY(24px)}
 .js .rv.in{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
-.mast{padding:64px 0 26px}
+.mast{padding:64px 28px 26px}
 .mast h1{font-family:var(--display);font-weight:800;font-size:clamp(50px,10.5vw,158px);line-height:.84;letter-spacing:-.035em;margin:0;text-transform:uppercase}
 .mast h1 em{font-style:normal;display:block;color:var(--accent)}
 .mast .sub{display:flex;flex-wrap:wrap;gap:9px 28px;margin:26px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
@@ -122,11 +127,12 @@ a{color:inherit}a:hover{color:var(--accent)}
 .lbn{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);font-size:30px;cursor:pointer;padding:18px}
 .lbn:hover{color:var(--accent)}.lbp{left:8px}.lbf{right:8px}
 .foot{border-top:1px solid var(--line);margin-top:56px;padding:36px 0 72px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.foot .sig{font-family:var(--body);font-size:15px;letter-spacing:0;text-transform:none;color:var(--muted);margin:0;text-align:center}
+.foot .sig{font-family:var(--display);font-weight:800;font-size:clamp(30px,5vw,64px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;color:var(--ink);margin:0;text-align:left}
+.foot .sig em{font-style:normal;display:block;color:var(--accent)}
 .foot p{margin:0 0 7px;max-width:92ch;line-height:1.8}
 .empty{display:none;font-family:var(--mono);font-size:12px;color:var(--muted);padding:56px 28px;line-height:1.9}
 .empty.on{display:block}
-@media(max-width:900px){.wrap{padding:0 16px}.bar{padding:0 16px}.body{grid-template-columns:1fr;gap:24px}.def{position:static}
+@media(max-width:900px){.wrap{padding:0 16px}.bar{padding:0 16px}.mast,.filters,.foot .wrap{padding-left:16px;padding-right:16px}.body{grid-template-columns:1fr;gap:24px}.def{position:static}
 .mood{column-count:2;column-gap:10px}.mood .pc{margin-bottom:10px}.hero{height:44vh}.mast{padding:40px 0 18px}}
 @media(max-width:430px){.mood{column-count:1}.mood--all{column-count:2}.tools input[type=search]{width:100px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none !important;transition:none !important}
@@ -137,7 +143,7 @@ a{color:inherit}a:hover{color:var(--accent)}
 <header class="wrap mast" id="topo">
 <h1>Radar<em>Visual</em></h1>
 <p class="sub"><span>ARQUIVO <b>11 BLOCOS</b></span><span>PEÇAS <b>247</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>1</b></span><span>GAB TAVARES</span></p>
-<p class="stamp">Última atualização &nbsp;<b>2026-07-31 03:59</b></p>
+<p class="stamp">Última atualização &nbsp;<b>2026-07-31 04:11</b></p>
 </header>
 <div class="mosaic" id="mosaico">
 <div class="mrow" style="--d:92s;--mh:132px">
@@ -897,7 +903,7 @@ a{color:inherit}a:hover{color:var(--accent)}
 </div></div></section>
 </main>
 <p class="empty" id="empty">Nada casa com esse filtro. Tente limpar o recorte, o mês ou a busca.</p>
-<footer class="foot"><div class="wrap"><p class="sig">Feito com amorzin. Gab. =)</p></div></footer>
+<footer class="foot"><div class="wrap"><p class="sig">Feito com amorzin.<br><em>Gab. =)</em></p></div></footer>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Peça ampliada">
 <button class="lbx" id="lbx" type="button" aria-label="Fechar">ESC</button>
 <button class="lbn lbp" id="lbp" type="button" aria-label="Anterior">&#8249;</button>

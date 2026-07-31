@@ -185,9 +185,33 @@ não muda de tamanho.
 mês e de recorte. Não se cria página por rodada: o valor do arquivo é poder
 comparar dois meses sem trocar de endereço.
 
-**Rodapé.** Uma linha só: `Feito com amorzin. Gab. =)`. Nada de método, nada de
-contagem, nada de explicação — isso tudo vive nos arquivos `.md` do repositório,
-que é onde se lê método. A página termina com assinatura e ponto.
+**Rodapé.** Só a assinatura, em display grande e em duas linhas, alinhada à
+esquerda como a abertura:
+
+```
+FEITO COM AMORZIN.
+GAB. =)              ← no acento
+```
+
+Fecha a página ecoando a abertura, que também é display em duas linhas com a
+segunda no acento. Nada de método, nada de contagem, nada de explicação — isso
+tudo vive nos arquivos `.md` do repositório, que é onde se lê método.
+
+## Alinhamento
+
+Abertura, filtros, assinatura e barra fixa **começam todos na mesma linha
+vertical**, a 28px da borda (16px no mobile). Nenhum deles usa a largura máxima
+que segura os blocos: são elementos de moldura, não de conteúdo, e moldura
+centralizada dentro de uma página de imagem cheia lê como desalinho.
+
+## Favicon
+
+`RV` em duas cores: o R na cor do texto, o V no acento.
+
+Três arquivos, porque nenhum formato cobre tudo: `favicon.svg` adapta as cores
+ao modo do sistema por `prefers-color-scheme`, `favicon-32.png` cobre quem não
+lê SVG — o Safari, entre outros — e `apple-touch-icon.png` cobre a tela de
+início do iOS. Os PNG são fixos na paleta clara.
 
 **Link do original.** Pinterest aceita `pinterest.com/pin/<id>/`. **Behance
 exige um segmento depois do id**: `behance.net/gallery/<id>/` devolve página não
