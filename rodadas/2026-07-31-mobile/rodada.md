@@ -4,7 +4,7 @@
 **Termos derivados:** mobile, mobile phone, smartphone launch
 **Fontes varridas:** Behance (busca, `sort=recommended`, primeira página) e
 Pinterest (busca logada, primeira página). Nenhuma fora do `fontes.md`.
-**Coletadas:** 165 | **Aproveitadas:** 41 | **Grupos:** 4 + avulsas
+**Coletadas:** 165 | **Aproveitadas:** 46 | **Grupos:** 5 + avulsas
 
 ---
 
@@ -123,6 +123,71 @@ ainda não tem nome.
 - OPPO | Stockholm Design Lab | Behance
 - Popsic mini | SHS Shih | Behance
 
-## Etapa 6
+## Etapa 6: pesquisar e nomear
 
-_pendente de aprovação da etapa 5_
+Autoria deixou de ser critério de corte no meio desta rodada, a pedido do Gab.
+O grupo **Ilha em close** só existe por causa disso: estava a um autor nomeado
+de fechar pela regra antiga, e é justamente o achado mais interessante.
+
+### Ilha em close — emergente, nome inventado
+
+Não achei nome consagrado, e a busca por termo de técnica não devolve nada
+porque ninguém titula a peça assim. Inventado nesta rodada.
+
+A origem é técnica antes de estética. Sensores de uma polegada, como o Sony
+IMX989, exigiram mais profundidade e a saliência da câmera virou inevitável. A
+Xiaomi resolveu com a ilha circular na parceria com a Leica em 2022, citando
+corpo de câmera profissional, e Oppo e Vivo adotaram a mesma citação nas linhas
+pro no ano seguinte. A imprensa de tecnologia resume o movimento como: o bump
+deixou de ser defeito e virou bravata, quanto maior a ilha, maior o gabarito.
+
+O que muda agora é o enquadramento da publicidade, e é aí que está o sinal: em
+vez de mostrar o aparelho com a câmera como detalhe, a peça descarta o aparelho.
+As peças com atribuição vêm de estúdio de CGI, não de fotógrafo — a ilha em
+close é quase sempre renderizada, e é isso que permite o reflexo que a foto não
+entrega.
+
+### Cromo líquido — consolidado, nome consagrado
+
+Entrou na etapa 5 como emergente e **foi reclassificado**. Tem nome estável
+(liquid chrome, liquid metal), tem volume e já virou pauta: o AIGA Eye on
+Design, que é segunda linha do `fontes.md`, publicou sobre. Pelo critério do
+protocolo, isso é consolidado.
+
+A origem é banal e explica o significado: o cromo era o material padrão de
+LightWave, Bryce e Cinema 4D, e entre 1998 e 2004 se renderizava tudo em metal
+líquido porque a ferramenta finalmente estava ao alcance. Cromo nunca significou
+futuro por escolha estética; significou acesso. O revival começou no Tumblr por
+volta de 2018 e estourou no TikTok entre 2020 e 2021.
+
+### Vitrine preta com fio de luz — consolidado, nome inventado
+
+Sem nome consagrado para o conjunto. As partes têm nome de técnica fotográfica
+— low key, rim light — mas o tratamento aplicado, com a tipografia fina em caixa
+alta somada ao preto e ao fio especular, não tem. Inventado nesta rodada.
+
+Fixou-se na gramática de keynote entre 2007 e 2015 e não se moveu. Está no
+relatório como linha de base, não como pista.
+
+### Mão-e-aparelho em cor chapada — consolidado, nome inventado
+
+Sem nome consagrado. Nasceu de restrição de produção no varejo de telefonia e
+foi empurrado pela peça vertical de rede social, onde não cabe cenário e campo
+de cor sólida sobrevive à compressão.
+
+### Maquete flutuante em cor chapada — consolidado, nome consagrado
+
+"Floating mockup" é o nome corrente, e não é nome de estética: é nome de
+produto. Existe uma indústria de geradores vendendo exatamente este arquivo, e o
+material promocional dessas ferramentas descreve o formato como jeito de
+destacar trabalho em Behance e Dribbble.
+
+Fica registrado como aviso de método: é o que o `fontes.md` manda descartar sem
+ler, aparecendo por dentro de uma fonte de Camada 1 em vez de por fora.
+Repetição alta não prova movimento — às vezes prova que todo mundo comprou o
+mesmo template.
+
+## Publicação
+
+`docs/index.html` gerado a partir do `dashboard.md`. 46 peças em `assets/full`
+até 1200px e `assets/thumb` até 300px, com cópia em `refs/`.

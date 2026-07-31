@@ -13,7 +13,11 @@ de fora usar o mesmo termo.
 
 | Nome | Origem do nome | Classificação | Rodada | Bloco |
 |---|---|---|---|---|
-| | | | | |
+| Ilha em close | inventado | emergente | 2026-07-31-mobile | Ilha em close |
+| Cromo líquido | consagrado | consolidado | 2026-07-31-mobile | Cromo líquido |
+| Vitrine preta com fio de luz | inventado | consolidado | 2026-07-31-mobile | Vitrine preta com fio de luz |
+| Mão-e-aparelho em cor chapada | inventado | consolidado | 2026-07-31-mobile | Mão-e-aparelho em cor chapada |
+| Maquete flutuante em cor chapada | consagrado (floating mockup) | consolidado | 2026-07-31-mobile | Maquete flutuante em cor chapada |
 
 ## Nomes perseguidos que não fecharam bloco
 
@@ -23,4 +27,4 @@ agrupamento visual os trouxer de volta.
 
 | Nome | Rodada | O que aconteceu |
 |---|---|---|
-| | | |
+| Maquete flutuante | 2026-07-31-mobile | Fechou grupo por todos os critérios formais e mesmo assim não é estética: é o formato que as bibliotecas de mockup vendem pronto. Mantido no relatório como contraprova, não como tendência. |

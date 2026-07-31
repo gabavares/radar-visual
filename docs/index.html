@@ -3,16 +3,593 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radar Visual — CMLO&amp;CO</title>
+<title>Radar Visual — mobile — CMLO&amp;CO</title>
+<meta name="description" content="Rodada de mobile do Radar Visual: 165 pecas varridas, 46 aproveitadas, 5 agrupamentos por tratamento visual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--void:#0D0F1A;--paper:#E8E6E1;--muted:#8A90A6}
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-background:var(--void);color:var(--paper);
-font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:12px;letter-spacing:.06em}
-p{color:var(--muted);text-align:center;padding:20px}
+:root{--void:#0D0F1A;--surface:#161A2B;--edge:#252A3D;--paper:#E8E6E1;--muted:#8A90A6;--live:#46D6A4;
+--display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;
+--mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;--bar:44px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--void);color:var(--paper);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}a:hover{color:var(--live)}
+:focus-visible{outline:2px solid var(--live);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* malha */
+.mesh-wrap{position:relative}
+.mesh{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:2px;max-height:78vh;overflow:hidden}
+.mesh img{display:block;width:100%;height:140px;object-fit:cover;opacity:0}
+.mesh img.in{opacity:1;transition:opacity .3s ease}
+.mesh-wrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to bottom,rgba(13,15,26,0),var(--void));pointer-events:none}
+.meta{position:absolute;left:14px;bottom:14px;z-index:3;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.9}
+.meta b{color:var(--paper);font-weight:500}
+/* barra */
+.bar{position:sticky;top:0;z-index:40;background:var(--void);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);display:flex;gap:16px;align-items:center;padding:0 16px;min-height:var(--bar);overflow-x:auto;white-space:nowrap}
+.bar ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+.bar a{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-decoration:none;color:var(--muted);padding:14px 0;display:block}
+.bar a:hover,.bar a:focus-visible{color:var(--paper)}
+.bar a.em{color:var(--live)}
+.tools{margin-left:auto;display:flex;align-items:center;gap:12px}
+.tools input[type=search]{font-family:var(--mono);font-size:11px;letter-spacing:.05em;background:var(--surface);color:var(--paper);border:1px solid var(--edge);border-radius:0;padding:7px 10px;width:170px;min-width:110px}
+.tools input::placeholder{color:var(--muted)}
+.tools input:focus{border-color:var(--live);outline:none}
+.tg{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--edge);padding:7px 10px;cursor:pointer;white-space:nowrap}
+.tg[aria-pressed=true]{color:var(--live);border-color:var(--live)}
+/* bloco */
+.wrap{max-width:1700px;margin:0 auto;padding:0 16px}
+.block{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px;padding:48px 0;border-bottom:1px solid var(--edge)}
+.block--em{grid-template-columns:minmax(0,1.15fr) minmax(0,2fr);border-left:2px solid var(--live);padding-left:22px;margin-left:-24px}
+.def{position:sticky;top:calc(var(--bar) + 16px);align-self:start}
+.def h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,2.7vw,34px);line-height:1.02;letter-spacing:-.015em;margin:0 0 10px}
+.block--em .def h2{font-size:clamp(30px,3.8vw,46px)}
+.kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--edge)}
+.block--em .kind{color:var(--live)}
+.lines{margin:0}
+.lines div{display:grid;grid-template-columns:104px 1fr;gap:10px;margin-bottom:9px;align-items:baseline}
+.lines .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);line-height:1.7}
+.lines .tx{font-size:14.5px}
+.block--em .lines .tx{font-size:15.5px}
+.ctxbtn{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--edge);padding:8px 0 4px;margin-top:12px;cursor:pointer}
+.ctxbtn:hover{color:var(--live);border-color:var(--live)}
+.ctx{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.ctx.on{grid-template-rows:1fr}
+.ctx>div{overflow:hidden}
+.ctx p{margin:12px 0 0;font-size:13.5px;color:var(--muted);max-width:52ch}
+/* masonry */
+.mas{column-count:3;column-gap:3px}
+.block--em .mas{column-count:2}
+@media(max-width:1200px){.mas{column-count:2}}
+.pc{break-inside:avoid;margin:0 0 3px;position:relative;display:block;width:100%}
+.pc button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;font:inherit;color:inherit}
+.pc img{display:block;width:100%;height:auto;border:0;opacity:0}
+.pc img.in{opacity:1;transition:opacity .3s ease}
+.cap{position:absolute;left:0;right:0;bottom:0;font-family:var(--mono);font-size:10px;letter-spacing:.04em;background:rgba(13,15,26,.92);color:var(--paper);padding:7px 9px;opacity:0;pointer-events:none}
+.pc:hover .cap,.pc:focus-within .cap{opacity:1;pointer-events:auto}
+.cap a{color:var(--muted);text-decoration:none}.cap a:hover,.cap a:focus-visible{color:var(--live)}
+.cap .s{color:var(--muted)}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;display:none;background:rgba(13,15,26,.97);padding:22px;align-items:center;justify-content:center;opacity:0}
+.lb.on{display:flex;opacity:1;transition:opacity .2s ease}
+.lb figure{margin:0;max-width:100%;max-height:100%;text-align:center}
+.lb img{max-width:100%;max-height:82vh;width:auto;height:auto;display:block;margin:0 auto}
+.lb figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted);margin-top:12px}
+.lb figcaption a{color:var(--paper);text-decoration:none}.lb figcaption a:hover{color:var(--live)}
+.lbx{position:absolute;top:12px;right:14px;background:none;border:0;color:var(--muted);font-family:var(--mono);font-size:12px;cursor:pointer;padding:8px}
+.lbx:hover{color:var(--live)}
+.lbn{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);font-size:26px;cursor:pointer;padding:16px}
+.lbn:hover{color:var(--live)}.lbp{left:6px}.lbf{right:6px}
+/* rodape */
+.foot{max-width:1700px;margin:0 auto;padding:32px 16px 64px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--muted)}
+.foot p{margin:0 0 6px;max-width:78ch}
+.foot h3{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--paper);font-weight:500;margin:0 0 8px}
+.empty{display:none;font-family:var(--mono);font-size:12px;color:var(--muted);padding:56px 16px}
+.empty.on{display:block}
+/* mobile */
+@media(max-width:820px){
+.mesh{display:flex;overflow-x:auto;overflow-y:hidden;max-height:none;height:190px;gap:2px;scroll-snap-type:x proximity}
+.mesh img{width:150px;height:190px;flex:0 0 auto}
+.mesh-wrap::after{display:none}
+.meta{position:static;padding:12px 16px 0}
+.block,.block--em{grid-template-columns:1fr;gap:20px;padding:34px 0;margin-left:0;padding-left:16px}
+.def{position:static}
+.mas,.block--em .mas{column-count:2}
+.cap{opacity:1;position:static;background:none;padding:6px 0 0}
+}
+@media(max-width:420px){.mas,.block--em .mas{column-count:1}.wrap,.foot{padding-left:12px;padding-right:12px}.tools input[type=search]{width:104px}}
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.mesh img,.pc img{opacity:1 !important}}
 </style>
 </head>
 <body>
-<p>RADAR VISUAL — PLACEHOLDER. A PRIMEIRA RODADA AINDA NÃO FOI PUBLICADA.</p>
+<header class="mesh-wrap">
+<h1 class="sr">Radar Visual — rodada de mobile</h1>
+<div class="mesh" aria-label="Malha da varredura">
+<img src="assets/thumb/vitrine-preta-01.jpg" width="300" height="235" alt="Samsung Paradigm Launch Campaign — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-02.jpg" width="300" height="235" alt="Vivo X200 Series Launch 2024 — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-03.jpg" width="300" height="235" alt="OPPO Find X3 Series Online Launch event — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-04.jpg" width="300" height="235" alt="HUAWEI Mate X2 Launch Film — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-05.jpg" width="300" height="235" alt="vivo X FOLD 3 Pro launch — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-06.jpg" width="300" height="235" alt="VIVO Fold&amp;Flip Launch — Countdown &amp; Opening — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-07.jpg" width="300" height="235" alt="HUAWEI Mate X2 Launch Film (cartaz) — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-08.jpg" width="300" height="235" alt="Google Pixel 6 Launch — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-09.jpg" width="300" height="533" alt="Palco de lançamento com anel de luz — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-10.jpg" width="300" height="400" alt="Redmi K90 Max — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/vitrine-preta-11.jpg" width="300" height="200" alt="Mobile World Congress 2023 — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-12.jpg" width="300" height="235" alt="ГАЛКА — Mobile app — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-13.jpg" width="300" height="235" alt="FridgeMate — AI Food Planner — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-14.jpg" width="300" height="235" alt="Ocean of News — Mobile App — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-15.jpg" width="300" height="235" alt="Plataforma de apoio psicológico — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-16.jpg" width="300" height="235" alt="LUCENT SPACE — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-17.jpg" width="300" height="235" alt="UpToDate — News App — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-18.jpg" width="300" height="235" alt="Medcard Mobile app — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-19.jpg" width="300" height="235" alt="N26 — Transactions &amp; Home Page — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-20.jpg" width="300" height="235" alt="CivicOS — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-21.jpg" width="300" height="235" alt="VTC Design — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-22.jpg" width="300" height="375" alt="Music player mobile app — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-23.jpg" width="300" height="375" alt="Music player mobile app — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-24.jpg" width="300" height="225" alt="Learning Platform — Mobile Application — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/maquete-flutuante-25.jpg" width="300" height="597" alt="App de banco — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-26.jpg" width="300" height="235" alt="Honor 600 Series Launching Event — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-27.jpg" width="300" height="235" alt="vivo V25 Series &amp; FIFA World Cup — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-28.jpg" width="300" height="235" alt="SEGO Smart 10 — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-29.jpg" width="300" height="235" alt="Turki Store — Mobile Store Campaign — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-30.jpg" width="300" height="375" alt="Cartaz iPhone 16 Plus — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-31.jpg" width="300" height="225" alt="Poco F7 — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-32.jpg" width="300" height="375" alt="Social Media — Loja de iPhone — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-33.jpg" width="300" height="533" alt="Black Weeks — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-34.jpg" width="300" height="375" alt="Dobrável de nova geração — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/mao-e-aparelho-35.jpg" width="300" height="450" alt="Smartphone em azul pastel — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/cromo-sem-forma-36.jpg" width="300" height="235" alt="DEPARTMNT launch campaign — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/cromo-sem-forma-37.jpg" width="300" height="235" alt="The Poze Brand Launch — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/cromo-sem-forma-38.jpg" width="300" height="235" alt="Xiaomi M10 — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/cromo-sem-forma-39.jpg" width="300" height="235" alt="Huawei Mate 8 — outdoor launch concept — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/macro-camera-40.jpg" width="300" height="235" alt="OnePlus Nord N20 Launch Campaign — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/macro-camera-41.jpg" width="300" height="235" alt="Realme P4 Pro Camera Experience — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/macro-camera-42.jpg" width="300" height="534" alt="Redmi Note 13 — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/macro-camera-43.jpg" width="300" height="169" alt="OPPO Find — microscópio 30x — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/macro-camera-44.jpg" width="300" height="450" alt="Fairphone 6 — módulos — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/avulsas-45.jpg" width="300" height="235" alt="OPPO — peça da varredura de mobile" loading="lazy" decoding="async">
+<img src="assets/thumb/avulsas-46.jpg" width="300" height="235" alt="Popsic mini — peça da varredura de mobile" loading="lazy" decoding="async">
+</div>
+<p class="meta">RECORTE <b>MOBILE</b> &nbsp; DATA <b>2026-07-31</b> &nbsp; COLETADAS <b>165</b> &nbsp; APROVEITADAS <b>46</b> &nbsp; GRUPOS <b>5</b></p>
+</header>
+<nav class="bar" aria-label="Blocos">
+<ul>
+<li><a href="#ilha-em-close" class="em">ILHA EM CLOSE</a></li>
+<li><a href="#vitrine-preta">VITRINE PRETA COM FIO DE LUZ</a></li>
+<li><a href="#cromo-liquido">CROMO LÍQUIDO</a></li>
+<li><a href="#mao-e-aparelho">MÃO-E-APARELHO EM COR CHAPADA</a></li>
+<li><a href="#maquete-flutuante">MAQUETE FLUTUANTE EM COR CHAPADA</a></li>
+<li><a href="#avulsas">AVULSAS</a></li>
+</ul>
+<div class="tools">
+<label class="sr" for="q">Buscar</label>
+<input id="q" type="search" placeholder="filtrar" autocomplete="off">
+<button class="tg" id="tg" type="button" aria-pressed="false">só emergentes</button>
+</div>
+</nav>
+<main class="wrap">
+<section class="block block--em" id="ilha-em-close" data-em="true" data-hay="Ilha em close O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Da ilha circular que a Xiaomi criou com a Leica em 2022 e que Oppo e Vivo copiaram no ano seguinte. Sensor de uma polegada exige profundidade, a saliência virou ostentação e a peça passou a fotografá-la como joia. Lançamento de aparelho, acessório óptico e qualquer marca que venda precisão como argumento. Marca que precise parecer leve ou barata, porque o close de metal usinado comunica peso e preço. ">
+<div class="def">
+<h2>Ilha em close</h2>
+<p class="kind">emergente &nbsp;·&nbsp; nome inventado nesta rodada &nbsp;·&nbsp; 2 fontes &nbsp;·&nbsp; 5 peças</p>
+<div class="lines">
+<div><span class="lbl">O QUE É</span><span class="tx">O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena.</span></div>
+<div><span class="lbl">DE ONDE VEM</span><span class="tx">Da ilha circular que a Xiaomi criou com a Leica em 2022 e que Oppo e Vivo copiaram no ano seguinte.</span></div>
+<div><span class="lbl">POR QUE AGORA</span><span class="tx">Sensor de uma polegada exige profundidade, a saliência virou ostentação e a peça passou a fotografá-la como joia.</span></div>
+<div><span class="lbl">ONDE ENCAIXA</span><span class="tx">Lançamento de aparelho, acessório óptico e qualquer marca que venda precisão como argumento.</span></div>
+<div><span class="lbl">ONDE NÃO</span><span class="tx">Marca que precise parecer leve ou barata, porque o close de metal usinado comunica peso e preço.</span></div>
+</div>
+<button class="ctxbtn" type="button" aria-expanded="false" aria-controls="c-ilha-em-close">contexto</button>
+<div class="ctx" id="c-ilha-em-close"><div><p>É o único agrupamento da rodada que a busca por nome não teria achado, porque ninguém titula a peça de &quot;macro de ilha&quot;. A origem é técnica antes de ser estética: sensores maiores exigiram mais profundidade e o bump deixou de ser defeito para virar assinatura, num movimento que a imprensa de tecnologia resume como quanto maior a ilha, maior a bravata. A parceria Xiaomi-Leica de 2022 deu a forma circular que cita corpo de câmera profissional, e Oppo e Vivo adotaram a mesma citação nas linhas pro. O que muda agora é o enquadramento da publicidade: em vez de mostrar o telefone inteiro e a câmera como detalhe, a peça descarta o telefone. Vale reparar que as três peças com atribuição vêm de estúdios de CGI, não de fotógrafos — a ilha em close é quase sempre renderizada, e é isso que permite o reflexo perfeito que a foto não entrega.</p></div></div>
+</div>
+<div class="mas">
+<figure class="pc">
+<button type="button" data-full="assets/full/macro-camera-40.jpg" data-w="808" data-h="632" data-cap="Transparent House · Behance" data-link="https://www.behance.net/gallery/142751649/">
+<img src="assets/thumb/macro-camera-40.jpg" width="300" height="235" alt="O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Peça: OnePlus Nord N20 Launch Campaign." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Transparent House <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/142751649/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/macro-camera-41.jpg" data-w="808" data-h="632" data-cap="Kent Vin Lievianto · Behance" data-link="https://www.behance.net/gallery/245934951/">
+<img src="assets/thumb/macro-camera-41.jpg" width="300" height="235" alt="O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Peça: Realme P4 Pro Camera Experience." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Kent Vin Lievianto <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/245934951/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/macro-camera-42.jpg" data-w="600" data-h="1067" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/580682945739161460/">
+<img src="assets/thumb/macro-camera-42.jpg" width="300" height="534" alt="O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Peça: Redmi Note 13." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/580682945739161460/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/macro-camera-43.jpg" data-w="736" data-h="414" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/1047861038316703857/">
+<img src="assets/thumb/macro-camera-43.jpg" width="300" height="169" alt="O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Peça: OPPO Find — microscópio 30x." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/1047861038316703857/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/macro-camera-44.jpg" data-w="736" data-h="1104" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/34902965860493864/">
+<img src="assets/thumb/macro-camera-44.jpg" width="300" height="450" alt="O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Peça: Fairphone 6 — módulos." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/34902965860493864/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+</div>
+</section>
+<section class="block" id="vitrine-preta" data-em="false" data-hay="Vitrine preta com fio de luz Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Da gramática de keynote que a Apple fixou nos anos 2000 e que virou língua franca do setor. Segue de pé porque é o jeito mais barato de dizer premium sem dizer nada. Lançamento de aparelho, evento de marca e qualquer categoria que venda engenharia. Marca que queira parecer acessível ou quente, e categoria onde o preto já está saturado. ">
+<div class="def">
+<h2>Vitrine preta com fio de luz</h2>
+<p class="kind">consolidado &nbsp;·&nbsp; nome inventado nesta rodada &nbsp;·&nbsp; 2 fontes &nbsp;·&nbsp; 11 peças</p>
+<div class="lines">
+<div><span class="lbl">O QUE É</span><span class="tx">Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno.</span></div>
+<div><span class="lbl">DE ONDE VEM</span><span class="tx">Da gramática de keynote que a Apple fixou nos anos 2000 e que virou língua franca do setor.</span></div>
+<div><span class="lbl">POR QUE AGORA</span><span class="tx">Segue de pé porque é o jeito mais barato de dizer premium sem dizer nada.</span></div>
+<div><span class="lbl">ONDE ENCAIXA</span><span class="tx">Lançamento de aparelho, evento de marca e qualquer categoria que venda engenharia.</span></div>
+<div><span class="lbl">ONDE NÃO</span><span class="tx">Marca que queira parecer acessível ou quente, e categoria onde o preto já está saturado.</span></div>
+</div>
+<button class="ctxbtn" type="button" aria-expanded="false" aria-controls="c-vitrine-preta">contexto</button>
+<div class="ctx" id="c-vitrine-preta"><div><p>Não é tendência, é o padrão da categoria, e está aqui por isso: serve de linha de base contra a qual os outros blocos se leem. O tratamento tem três partes fixas — fundo preto que elimina contexto, luz de borda que desenha a silhueta sem revelar superfície, e tipografia fina em caixa alta com entreletra aberta. Nenhuma delas é nova; a soma virou convenção entre 2007 e 2015 e não se moveu desde então. O que a rodada mostra é a extensão do domínio: das oito peças, seis são de marcas asiáticas diferentes, o que indica que o repertório atravessou de referência para gramática obrigatória. Para a agência isso é um alerta, não uma pista — entregar preto com fio de luz num briefing de mobile é entregar o que o cliente já viu, e o único jeito de usar bem é sabendo que se está citando.</p></div></div>
+</div>
+<div class="mas">
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-01.jpg" data-w="808" data-h="632" data-cap="Göksel Aydoğan · Behance" data-link="https://www.behance.net/gallery/244985903/">
+<img src="assets/thumb/vitrine-preta-01.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: Samsung Paradigm Launch Campaign." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Göksel Aydoğan <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/244985903/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-02.jpg" data-w="808" data-h="632" data-cap="Behance" data-link="https://www.behance.net/gallery/220961481/">
+<img src="assets/thumb/vitrine-preta-02.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: Vivo X200 Series Launch 2024." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Behance</span> · <a href="https://www.behance.net/gallery/220961481/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-03.jpg" data-w="808" data-h="632" data-cap="Behance" data-link="https://www.behance.net/gallery/115036505/">
+<img src="assets/thumb/vitrine-preta-03.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: OPPO Find X3 Series Online Launch event." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Behance</span> · <a href="https://www.behance.net/gallery/115036505/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-04.jpg" data-w="808" data-h="632" data-cap="Visual Tense · Behance" data-link="https://www.behance.net/gallery/137825925/">
+<img src="assets/thumb/vitrine-preta-04.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: HUAWEI Mate X2 Launch Film." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Visual Tense <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/137825925/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-05.jpg" data-w="808" data-h="632" data-cap="Behance" data-link="https://www.behance.net/gallery/204998623/">
+<img src="assets/thumb/vitrine-preta-05.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: vivo X FOLD 3 Pro launch." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Behance</span> · <a href="https://www.behance.net/gallery/204998623/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-06.jpg" data-w="808" data-h="632" data-cap="Behance" data-link="https://www.behance.net/gallery/169008441/">
+<img src="assets/thumb/vitrine-preta-06.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: VIVO Fold&amp;Flip Launch — Countdown &amp; Opening." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Behance</span> · <a href="https://www.behance.net/gallery/169008441/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-07.jpg" data-w="808" data-h="632" data-cap="Behance" data-link="https://www.behance.net/gallery/120582869/">
+<img src="assets/thumb/vitrine-preta-07.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: HUAWEI Mate X2 Launch Film (cartaz)." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Behance</span> · <a href="https://www.behance.net/gallery/120582869/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-08.jpg" data-w="808" data-h="632" data-cap="Jay Culley · Behance" data-link="https://www.behance.net/gallery/164340017/">
+<img src="assets/thumb/vitrine-preta-08.jpg" width="300" height="235" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: Google Pixel 6 Launch." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Jay Culley <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/164340017/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-09.jpg" data-w="736" data-h="1308" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/87749892737494840/">
+<img src="assets/thumb/vitrine-preta-09.jpg" width="300" height="533" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: Palco de lançamento com anel de luz." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/87749892737494840/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-10.jpg" data-w="736" data-h="981" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/391320655146665541/">
+<img src="assets/thumb/vitrine-preta-10.jpg" width="300" height="400" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: Redmi K90 Max." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/391320655146665541/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/vitrine-preta-11.jpg" data-w="735" data-h="490" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/227220743694532038/">
+<img src="assets/thumb/vitrine-preta-11.jpg" width="300" height="200" alt="Aparelho sobre preto absoluto, com um único fio de luz especular desenhando o contorno. Peça: Mobile World Congress 2023." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/227220743694532038/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+</div>
+</section>
+<section class="block" id="cromo-liquido" data-em="false" data-hay="Cromo líquido Matéria metálica sem forma fixa — respingo, fita, letra derretida — com reflexo de estúdio sobre fundo escuro. Do material cromado padrão dos softwares 3D de 1998 a 2004, quando renderizar virou acessível. Voltou pelo revival Y2K e é reação direta ao achatamento do design da década passada. Música, moda, evento e lançamento que precise de energia sem precisar de copy. Marca que venda confiança ou sobriedade — banco, saúde, jurídico — onde o brilho lê como bijuteria. ">
+<div class="def">
+<h2>Cromo líquido</h2>
+<p class="kind">consolidado &nbsp;·&nbsp; nome consagrado &nbsp;·&nbsp; 1 fonte &nbsp;·&nbsp; 4 peças</p>
+<div class="lines">
+<div><span class="lbl">O QUE É</span><span class="tx">Matéria metálica sem forma fixa — respingo, fita, letra derretida — com reflexo de estúdio sobre fundo escuro.</span></div>
+<div><span class="lbl">DE ONDE VEM</span><span class="tx">Do material cromado padrão dos softwares 3D de 1998 a 2004, quando renderizar virou acessível.</span></div>
+<div><span class="lbl">POR QUE AGORA</span><span class="tx">Voltou pelo revival Y2K e é reação direta ao achatamento do design da década passada.</span></div>
+<div><span class="lbl">ONDE ENCAIXA</span><span class="tx">Música, moda, evento e lançamento que precise de energia sem precisar de copy.</span></div>
+<div><span class="lbl">ONDE NÃO</span><span class="tx">Marca que venda confiança ou sobriedade — banco, saúde, jurídico — onde o brilho lê como bijuteria.</span></div>
+</div>
+<button class="ctxbtn" type="button" aria-expanded="false" aria-controls="c-cromo-liquido">contexto</button>
+<div class="ctx" id="c-cromo-liquido"><div><p>Tem nome consagrado, tem pauta e tem artigo: o AIGA Eye on Design já tratou do assunto, o que por si só o tira da gaveta de emergente. A origem é banal e vale saber, porque explica o significado: o cromo era o material default de LightWave, Bryce e Cinema 4D, e nos anos 2000 todo mundo renderizava tudo em metal líquido simplesmente porque finalmente podia. Ou seja, cromo nunca significou futuro por escolha estética — significou acesso à ferramenta. O revival começou no Tumblr por volta de 2018, estourou no TikTok entre 2020 e 2021 e agora chega ao setor de mobile já maduro. Ressalva de uso: por ter template gratuito em circulação, é o bloco desta rodada com maior risco de parecer genérico, e as quatro peças aqui são todas de estúdio de CGI fazendo exercício, não campanha de cliente.</p></div></div>
+</div>
+<div class="mas">
+<figure class="pc">
+<button type="button" data-full="assets/full/cromo-sem-forma-36.jpg" data-w="808" data-h="632" data-cap="Arseniy Valter · Behance" data-link="https://www.behance.net/gallery/165328989/">
+<img src="assets/thumb/cromo-sem-forma-36.jpg" width="300" height="235" alt="Matéria metálica sem forma fixa — respingo, fita, letra derretida — com reflexo de estúdio sobre fundo escuro. Peça: DEPARTMNT launch campaign." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Arseniy Valter <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/165328989/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/cromo-sem-forma-37.jpg" data-w="808" data-h="632" data-cap="Anna Dora L · Behance" data-link="https://www.behance.net/gallery/134792755/">
+<img src="assets/thumb/cromo-sem-forma-37.jpg" width="300" height="235" alt="Matéria metálica sem forma fixa — respingo, fita, letra derretida — com reflexo de estúdio sobre fundo escuro. Peça: The Poze Brand Launch." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Anna Dora L <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/134792755/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/cromo-sem-forma-38.jpg" data-w="808" data-h="632" data-cap="MILLARC CGI · Behance" data-link="https://www.behance.net/gallery/104488839/">
+<img src="assets/thumb/cromo-sem-forma-38.jpg" width="300" height="235" alt="Matéria metálica sem forma fixa — respingo, fita, letra derretida — com reflexo de estúdio sobre fundo escuro. Peça: Xiaomi M10." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">MILLARC CGI <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/104488839/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/cromo-sem-forma-39.jpg" data-w="808" data-h="632" data-cap="Behance" data-link="https://www.behance.net/gallery/46480223/">
+<img src="assets/thumb/cromo-sem-forma-39.jpg" width="300" height="235" alt="Matéria metálica sem forma fixa — respingo, fita, letra derretida — com reflexo de estúdio sobre fundo escuro. Peça: Huawei Mate 8 — outdoor launch concept." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Behance</span> · <a href="https://www.behance.net/gallery/46480223/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+</div>
+</section>
+<section class="block" id="mao-e-aparelho" data-em="false" data-hay="Mão-e-aparelho em cor chapada Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Do varejo de telefonia, que precisa mostrar escala e cor do produto em espaço de anúncio pequeno. Cresce junto com a peça vertical de rede social, onde não cabe cenário. Operadora, varejo, promoção e qualquer peça que precise funcionar em miniatura. Marca premium ou peça de marca institucional, porque o corte fechado lê como oferta. ">
+<div class="def">
+<h2>Mão-e-aparelho em cor chapada</h2>
+<p class="kind">consolidado &nbsp;·&nbsp; nome inventado nesta rodada &nbsp;·&nbsp; 2 fontes &nbsp;·&nbsp; 10 peças</p>
+<div class="lines">
+<div><span class="lbl">O QUE É</span><span class="tx">Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro.</span></div>
+<div><span class="lbl">DE ONDE VEM</span><span class="tx">Do varejo de telefonia, que precisa mostrar escala e cor do produto em espaço de anúncio pequeno.</span></div>
+<div><span class="lbl">POR QUE AGORA</span><span class="tx">Cresce junto com a peça vertical de rede social, onde não cabe cenário.</span></div>
+<div><span class="lbl">ONDE ENCAIXA</span><span class="tx">Operadora, varejo, promoção e qualquer peça que precise funcionar em miniatura.</span></div>
+<div><span class="lbl">ONDE NÃO</span><span class="tx">Marca premium ou peça de marca institucional, porque o corte fechado lê como oferta.</span></div>
+</div>
+<button class="ctxbtn" type="button" aria-expanded="false" aria-controls="c-mao-e-aparelho">contexto</button>
+<div class="ctx" id="c-mao-e-aparelho"><div><p>É o oposto exato do bloco da vitrine preta e por isso vale ler os dois lado a lado: onde a vitrine elimina o contexto para produzir distância, este elimina o contexto para produzir proximidade. A mão faz o trabalho que o cenário faria, dá escala e humaniza, e ocupa uma fração do quadro. A cor chapada não é decisão de arte, é decisão de mídia: em feed vertical comprimido, campo de cor sólida sobrevive à compressão e cenário fotografado não. Das peças com atribuição, três das quatro são de campanha de varejo ou operadora do Sul da Ásia e do Oriente Médio, mercados onde o volume de peça promocional é altíssimo — o que sugere que a convenção nasceu de restrição de produção antes de virar escolha visual.</p></div></div>
+</div>
+<div class="mas">
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-26.jpg" data-w="808" data-h="632" data-cap="Sagor Islam · Behance" data-link="https://www.behance.net/gallery/252173325/">
+<img src="assets/thumb/mao-e-aparelho-26.jpg" width="300" height="235" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Honor 600 Series Launching Event." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Sagor Islam <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/252173325/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-27.jpg" data-w="808" data-h="632" data-cap="Ashwar Jacobs · Behance" data-link="https://www.behance.net/gallery/252025421/">
+<img src="assets/thumb/mao-e-aparelho-27.jpg" width="300" height="235" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: vivo V25 Series &amp; FIFA World Cup." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Ashwar Jacobs <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/252025421/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-28.jpg" data-w="808" data-h="632" data-cap="Zunair Khalid · Behance" data-link="https://www.behance.net/gallery/245415327/">
+<img src="assets/thumb/mao-e-aparelho-28.jpg" width="300" height="235" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: SEGO Smart 10." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Zunair Khalid <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/245415327/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-29.jpg" data-w="808" data-h="632" data-cap="Mahmoud Hamada · Behance" data-link="https://www.behance.net/gallery/253478463/">
+<img src="assets/thumb/mao-e-aparelho-29.jpg" width="300" height="235" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Turki Store — Mobile Store Campaign." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Mahmoud Hamada <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/253478463/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-30.jpg" data-w="736" data-h="920" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/31243791161497067/">
+<img src="assets/thumb/mao-e-aparelho-30.jpg" width="300" height="375" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Cartaz iPhone 16 Plus." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/31243791161497067/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-31.jpg" data-w="736" data-h="552" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/15129348745408125/">
+<img src="assets/thumb/mao-e-aparelho-31.jpg" width="300" height="225" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Poco F7." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/15129348745408125/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-32.jpg" data-w="736" data-h="920" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/6192518233251909/">
+<img src="assets/thumb/mao-e-aparelho-32.jpg" width="300" height="375" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Social Media — Loja de iPhone." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/6192518233251909/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-33.jpg" data-w="736" data-h="1308" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/13370130139865716/">
+<img src="assets/thumb/mao-e-aparelho-33.jpg" width="300" height="533" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Black Weeks." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/13370130139865716/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-34.jpg" data-w="736" data-h="920" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/65724475808383212/">
+<img src="assets/thumb/mao-e-aparelho-34.jpg" width="300" height="375" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Dobrável de nova geração." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/65724475808383212/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/mao-e-aparelho-35.jpg" data-w="736" data-h="1104" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/4081455908145337/">
+<img src="assets/thumb/mao-e-aparelho-35.jpg" width="300" height="450" alt="Mão segurando o aparelho em corte fechado sobre cor saturada, sem ambiente nenhum no quadro. Peça: Smartphone em azul pastel." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/4081455908145337/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+</div>
+</section>
+<section class="block" id="maquete-flutuante" data-em="false" data-hay="Maquete flutuante em cor chapada Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Da biblioteca de mockup que vende o arquivo pronto, e não de nenhum estúdio em particular. Continua porque é o formato que Behance e Dribbble premiam na miniatura da capa. Nada. É formato de apresentação de portfólio, não repertório para peça de cliente. Qualquer entrega ao cliente, porque comunica designer se apresentando, não marca falando. ">
+<div class="def">
+<h2>Maquete flutuante em cor chapada</h2>
+<p class="kind">consolidado &nbsp;·&nbsp; nome consagrado &nbsp;·&nbsp; 2 fontes &nbsp;·&nbsp; 14 peças</p>
+<div class="lines">
+<div><span class="lbl">O QUE É</span><span class="tx">Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma.</span></div>
+<div><span class="lbl">DE ONDE VEM</span><span class="tx">Da biblioteca de mockup que vende o arquivo pronto, e não de nenhum estúdio em particular.</span></div>
+<div><span class="lbl">POR QUE AGORA</span><span class="tx">Continua porque é o formato que Behance e Dribbble premiam na miniatura da capa.</span></div>
+<div><span class="lbl">ONDE ENCAIXA</span><span class="tx">Nada. É formato de apresentação de portfólio, não repertório para peça de cliente.</span></div>
+<div><span class="lbl">ONDE NÃO</span><span class="tx">Qualquer entrega ao cliente, porque comunica designer se apresentando, não marca falando.</span></div>
+</div>
+<button class="ctxbtn" type="button" aria-expanded="false" aria-controls="c-maquete-flutuante">contexto</button>
+<div class="ctx" id="c-maquete-flutuante"><div><p>Este bloco entra como contraprova e é o mais importante de ler com desconfiança. Ele passa em todos os critérios formais da etapa 5 — dez peças, dez origens distintas, duas fontes — e ainda assim não é uma estética em movimento: é a convenção de como se fotografa trabalho de interface para portfólio. A pesquisa fecha o caso: existe uma indústria de geradores de mockup flutuante vendendo exatamente este arquivo, e o próprio material promocional dessas ferramentas descreve o formato como jeito de destacar trabalho em Behance e Dribbble. É o que o fontes.md manda descartar sem ler, aparecendo por dentro de uma fonte de Camada 1 em vez de por fora. Fica registrado como aviso de método: repetição alta não prova movimento, às vezes prova só que todo mundo comprou o mesmo template.</p></div></div>
+</div>
+<div class="mas">
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-12.jpg" data-w="808" data-h="632" data-cap="Sergey Basharin · Behance" data-link="https://www.behance.net/gallery/250794931/">
+<img src="assets/thumb/maquete-flutuante-12.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: ГАЛКА — Mobile app." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Sergey Basharin <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/250794931/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-13.jpg" data-w="808" data-h="632" data-cap="Alina Volodina · Behance" data-link="https://www.behance.net/gallery/250586461/">
+<img src="assets/thumb/maquete-flutuante-13.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: FridgeMate — AI Food Planner." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Alina Volodina <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/250586461/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-14.jpg" data-w="808" data-h="632" data-cap="Dasha Ryabushenko · Behance" data-link="https://www.behance.net/gallery/248103685/">
+<img src="assets/thumb/maquete-flutuante-14.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: Ocean of News — Mobile App." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Dasha Ryabushenko <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/248103685/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-15.jpg" data-w="808" data-h="632" data-cap="Alina Timofeyeva · Behance" data-link="https://www.behance.net/gallery/171092057/">
+<img src="assets/thumb/maquete-flutuante-15.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: Plataforma de apoio psicológico." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Alina Timofeyeva <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/171092057/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-16.jpg" data-w="808" data-h="632" data-cap="Laura Besoi · Behance" data-link="https://www.behance.net/gallery/250765609/">
+<img src="assets/thumb/maquete-flutuante-16.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: LUCENT SPACE." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Laura Besoi <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/250765609/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-17.jpg" data-w="808" data-h="632" data-cap="Katerina Kabanova · Behance" data-link="https://www.behance.net/gallery/252258825/">
+<img src="assets/thumb/maquete-flutuante-17.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: UpToDate — News App." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Katerina Kabanova <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/252258825/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-18.jpg" data-w="808" data-h="632" data-cap="Daria Borisenko · Behance" data-link="https://www.behance.net/gallery/178393747/">
+<img src="assets/thumb/maquete-flutuante-18.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: Medcard Mobile app." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Daria Borisenko <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/178393747/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-19.jpg" data-w="808" data-h="632" data-cap="Jonny Czar · Behance" data-link="https://www.behance.net/gallery/159305455/">
+<img src="assets/thumb/maquete-flutuante-19.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: N26 — Transactions &amp; Home Page." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Jonny Czar <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/159305455/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-20.jpg" data-w="808" data-h="632" data-cap="Deji Joseph · Behance" data-link="https://www.behance.net/gallery/252907169/">
+<img src="assets/thumb/maquete-flutuante-20.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: CivicOS." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Deji Joseph <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/252907169/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-21.jpg" data-w="808" data-h="632" data-cap="Joseph DOSSOU YOVO · Behance" data-link="https://www.behance.net/gallery/250293143/">
+<img src="assets/thumb/maquete-flutuante-21.jpg" width="300" height="235" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: VTC Design." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Joseph DOSSOU YOVO <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/250293143/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-22.jpg" data-w="736" data-h="919" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/3025924745718744/">
+<img src="assets/thumb/maquete-flutuante-22.jpg" width="300" height="375" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: Music player mobile app." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/3025924745718744/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-23.jpg" data-w="736" data-h="919" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/4996249583119436/">
+<img src="assets/thumb/maquete-flutuante-23.jpg" width="300" height="375" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: Music player mobile app." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/4996249583119436/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-24.jpg" data-w="736" data-h="552" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/40250990416169708/">
+<img src="assets/thumb/maquete-flutuante-24.jpg" width="300" height="225" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: Learning Platform — Mobile Application." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/40250990416169708/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/maquete-flutuante-25.jpg" data-w="736" data-h="1464" data-cap="Pinterest" data-link="https://br.pinterest.com/pin/1196337400042827/">
+<img src="assets/thumb/maquete-flutuante-25.jpg" width="300" height="597" alt="Telas de app inclinadas no espaço com sombra longa, sobre cor sólida, sem tocar superfície nenhuma. Peça: App de banco." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap"><span class="s">Pinterest</span> · <a href="https://br.pinterest.com/pin/1196337400042827/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+</div>
+</section>
+<section class="block" id="avulsas" data-em="false" data-hay="Avulsas Peça visualmente forte que não rimou com nada, e é onde costuma aparecer o que ainda não tem nome.     ">
+<div class="def">
+<h2>Avulsas</h2>
+<p class="kind">Avulsas &nbsp;·&nbsp; não rimaram com nada</p>
+<div class="lines"><div><span class="lbl">O QUE É</span><span class="tx">Peça visualmente forte que não rimou com nada, e é onde costuma aparecer o que ainda não tem nome.</span></div></div>
+<button class="ctxbtn" type="button" aria-expanded="false" aria-controls="c-avulsas">contexto</button>
+<div class="ctx" id="c-avulsas"><div><p>Duas peças que não casaram com nenhum tratamento repetido. A identidade da OPPO pelo Stockholm Design Lab opera num registro que nenhuma outra peça da rodada toca: tipografia e sistema em vez de imagem de produto, o oposto de tudo que a busca por mobile devolve. O Popsic mini de SHS Shih trabalha objeto pequeno e cor doce, com um humor que também não teve par. Nenhuma das duas é fraca; as duas estão sozinhas, e o protocolo manda guardar exatamente isso.</p></div></div>
+</div>
+<div class="mas">
+<figure class="pc">
+<button type="button" data-full="assets/full/avulsas-45.jpg" data-w="808" data-h="632" data-cap="Stockholm Design Lab · Behance" data-link="https://www.behance.net/gallery/183238639/">
+<img src="assets/thumb/avulsas-45.jpg" width="300" height="235" alt="Peça visualmente forte que não rimou com nada, e é onde costuma aparecer o que ainda não tem nome. Peça: OPPO." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">Stockholm Design Lab <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/183238639/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+<figure class="pc">
+<button type="button" data-full="assets/full/avulsas-46.jpg" data-w="808" data-h="632" data-cap="SHS Shih · Behance" data-link="https://www.behance.net/gallery/251428865/">
+<img src="assets/thumb/avulsas-46.jpg" width="300" height="235" alt="Peça visualmente forte que não rimou com nada, e é onde costuma aparecer o que ainda não tem nome. Peça: Popsic mini." loading="lazy" decoding="async">
+</button>
+<figcaption class="cap">SHS Shih <span class="s">·</span> <span class="s">Behance</span> · <a href="https://www.behance.net/gallery/251428865/" target="_blank" rel="noopener noreferrer">original ↗</a></figcaption>
+</figure>
+</div>
+</section>
+</main>
+<p class="empty" id="empty">Nada casa com esse filtro.</p>
+<footer class="foot">
+<h3>Rodadas</h3>
+<p>2026-07-31 &nbsp;·&nbsp; MOBILE &nbsp;·&nbsp; 165 COLETADAS &nbsp;·&nbsp; 
+<h3 style="margin-top:22px">Como o campo foi montado</h3>
+<p>TERMOS: MOBILE, MOBILE PHONE, SMARTPHONE LAUNCH. PRIMEIRA PÁGINA DE BEHANCE E PINTEREST, SEM PAGINAR E SEM PERSEGUIR RECÊNCIA.</p>
+<p>ATRIBUIÇÃO NÃO É CRITÉRIO DE CORTE. PEÇA SEM CRÉDITO ENTRA E SUSTENTA GRUPO. NO PINTEREST A MAIORIA DOS PINS NÃO TRAZ AUTOR.</p>
+<p>CMLO&amp;CO &nbsp;·&nbsp; RADAR VISUAL</p>
+</footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Peça ampliada">
+<button class="lbx" id="lbx" type="button" aria-label="Fechar">ESC ✕</button>
+<button class="lbn lbp" id="lbp" type="button" aria-label="Anterior">‹</button>
+<button class="lbn lbf" id="lbf" type="button" aria-label="Próxima">›</button>
+<figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure>
+</div>
+<script>
+(function(){"use strict";
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var imgs=[].slice.call(document.querySelectorAll(".mesh img,.pc img"));
+if(reduce||!("IntersectionObserver" in window)){imgs.forEach(function(i){i.classList.add("in")});}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"250px 0px"});imgs.forEach(function(i){io.observe(i)});}
+var shots=[].slice.call(document.querySelectorAll(".pc button")),cur=-1;
+var lb=document.getElementById("lb"),lbi=document.getElementById("lbi"),lbc=document.getElementById("lbc"),lbx=document.getElementById("lbx"),last=null;
+function vis(b){return b.closest("section").style.display!=="none"}
+function show(n){var list=shots.filter(vis);if(!list.length)return;if(n<0)n=list.length-1;if(n>=list.length)n=0;cur=n;var b=list[n];
+lbi.src=b.getAttribute("data-full");lbi.width=b.getAttribute("data-w");lbi.height=b.getAttribute("data-h");lbi.alt=b.querySelector("img").alt;
+lbc.innerHTML=b.getAttribute("data-cap")+" · <a href=\""+b.getAttribute("data-link")+"\" target=\"_blank\" rel=\"noopener noreferrer\">original ↗</a>";
+lb.classList.add("on");lbx.focus();}
+function close(){lb.classList.remove("on");lbi.removeAttribute("src");if(last){last.focus();last=null}}
+document.addEventListener("click",function(e){
+var b=e.target.closest(".pc button");if(b){last=b;show(shots.filter(vis).indexOf(b));return}
+if(e.target.closest("#lbx")||e.target===lb){close();return}
+if(e.target.closest("#lbp")){show(cur-1);return}
+if(e.target.closest("#lbf")){show(cur+1);return}
+var c=e.target.closest(".ctxbtn");if(c){var p=document.getElementById(c.getAttribute("aria-controls"));var on=p.classList.toggle("on");c.setAttribute("aria-expanded",on?"true":"false");}
+});
+document.addEventListener("keydown",function(e){if(!lb.classList.contains("on"))return;
+if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1);});
+var q=document.getElementById("q"),tg=document.getElementById("tg"),secs=[].slice.call(document.querySelectorAll("section[data-hay]")),empty=document.getElementById("empty"),onlyEm=false;
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+secs.forEach(function(s){s._h=norm(s.getAttribute("data-hay"))});
+function filter(){var t=norm(q.value.trim()),any=false;
+secs.forEach(function(s){var hit=(!t||s._h.indexOf(t)>-1)&&(!onlyEm||s.getAttribute("data-em")==="true");s.style.display=hit?"":"none";if(hit)any=true});
+empty.classList.toggle("on",!any);}
+q.addEventListener("input",filter);
+tg.addEventListener("click",function(){onlyEm=!onlyEm;tg.setAttribute("aria-pressed",onlyEm?"true":"false");filter()});
+})();
+</script>
 </body>
 </html>
