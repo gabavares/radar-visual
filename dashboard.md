@@ -65,8 +65,8 @@ excedente pertence ao contexto.
 ```
 
 Fundo claro e quente, de papel, porque a página é parede de moodboard e não
-projeção. A peça ganha um cartão branco com sombra, que a separa do fundo e
-faz a parede parecer impressa em vez de renderizada.
+projeção. A peça entra direto sobre o papel, sem
+cartão e sem sombra: o contraste entre o fundo quente e a imagem já basta.
 
 O acento aparece pouco: bloco emergente, filtro ativo, link em hover, e a
 segunda linha do nome na abertura.
@@ -86,10 +86,11 @@ linhas parecerem uma ficha e não um texto.
 a segunda no acento. Abaixo, em mono: recorte da rodada, data, coletadas, na
 página, grupos. Cinco números soltos, sem cartão e sem ícone.
 
-Depois, a **faixa**: miniaturas de 170px em cartão branco, giradas de um grau
-para um lado e para o outro, deslizando na horizontal em laço contínuo. Pausa
-no hover. Some com `prefers-reduced-motion`. É decoração honesta — são peças
-da rodada, não stock.
+Depois, a **faixa**: miniaturas de altura fixa deslizando na horizontal em laço
+contínuo, **encostadas umas nas outras, sem moldura, sem borda e sem vão**. Uma
+fita de imagem contínua, não uma fileira de cartões. Pausa no hover, e cada
+miniatura abre no lightbox como qualquer outra peça — a imagem já está na
+página, então o clique não custa nada. Some com `prefers-reduced-motion`.
 
 **Imagem hero do bloco.** Uma peça do próprio bloco, grande, com véu escuro no
 pé e o nome em display por cima em branco. Move um pouco mais devagar que a
@@ -107,10 +108,16 @@ O tipo, a origem do nome, a contagem de fontes e de peças ficam no hero, em
 mono, acima do nome. Bloco emergente marca o nome com um ponto no acento e
 tinge essa linha de metadado. Sem badge colorida, sem etiqueta.
 
-**Moodboard.** Colunas de CSS, gutter de 20px. Cada peça é um cartão branco
-com respiro em volta, sombra baixa e uma rotação de menos de um grau que
-alterna. No hover o cartão se endireita, sobe 7px, a sombra abre e a imagem
-dá um zoom de 3%. É o gesto que faz a parede parecer manipulável.
+**Moodboard.** Colunas de CSS, gutter apertado. **Nada é girado.** A peça é a
+imagem, alinhada à grade, sem moldura branca, sem sombra de papel e sem
+inclinação. Legenda em mono abaixo, discreta.
+
+Isso é deliberado e substitui a versão anterior: cartão torto com sombra lê
+como scrapbook de 2005. Portfólio de design contemporâneo é grade rigorosa e
+imagem grande — a personalidade vem do ritmo entre os tamanhos, não de
+efeito de colagem.
+
+No hover a imagem sobe 4px e ganha um contorno fino no acento. Nada mais.
 
 **A varredura inteira.** Mesma linguagem de cartão, em colunas mais estreitas
 e seis por vez. Todas as peças coletadas, sem exceção. Legenda menor.
@@ -127,13 +134,28 @@ Peça sem autor é normal e não é erro: mostre só a fonte, sem travessão sol
 sem "autor desconhecido" e sem espaço reservado. O crédito encolhe, a imagem
 não muda de tamanho.
 
-**Rodadas anteriores.** Lista em mono no rodapé, por data e recorte. Cada
-rodada é uma página própria em `docs/`, não tudo na mesma.
+**Rodadas anteriores.** Ficam **nesta mesma página**, alcançadas pelo filtro de
+mês e de recorte. Não se cria página por rodada: o valor do arquivo é poder
+comparar dois meses sem trocar de endereço. O rodapé lista as rodadas em mono,
+por mês, data e recorte, com a contagem de cada uma.
 
 ## Filtros
 
-Busca por texto que casa nome de bloco, as cinco linhas e autor. Um toggle
-para mostrar só emergentes. Nada além disso.
+A página é o arquivo inteiro, então o filtro é o que a torna navegável.
+
+- **Recorte.** Lista de temas em mono: todos, mobile, trend, e o que mais
+  existir. Um por vez.
+- **Mês.** Lista dos meses que têm rodada, do mais novo para o mais velho.
+  Um por vez, mais a opção de todos.
+- **Busca** por texto que casa nome de bloco, as cinco linhas e o título da
+  peça.
+- **Toggle de emergentes.**
+
+Os quatro se combinam. Recorte e mês em linha própria acima da barra de
+blocos, porque são os dois eixos do arquivo e não filtros secundários.
+
+Quando um filtro esvazia a página, diga em mono o que sobrou de fora. Nunca
+deixe a tela em branco sem explicação.
 
 ## Performance
 
@@ -157,7 +179,8 @@ chama atenção para si.
 - **Hero com parallax de 7%.** Sutil o bastante para dar profundidade sem dar
   enjoo.
 - **Faixa de abertura em laço**, devagar, pausando no hover.
-- **Cartão no hover:** endireita, sobe, sombra abre, imagem em 3%.
+- **Peça no hover:** sobe 4px e ganha contorno fino no acento. Sem girar,
+  sem escalar.
 - **Contexto** expande deslizando, com a seta girando 90 graus.
 - **Lightbox** abre em fade com a figura crescendo de 98,5% para 100%.
 
@@ -185,9 +208,10 @@ Sem gradiente animado. Sem glassmorphism na interface, que seria usar uma
 estética catalogada como decoração da ferramenta que cataloga. Sem contador
 animado, sem cartão de estatística, sem parágrafo visível em repouso.
 
-Sem fita adesiva, sem alfinete, sem textura de cortiça. O moodboard se faz com
-cartão branco, sombra e uma rotação de menos de um grau — passar disso vira
-scrapbook e a ferramenta perde a cara de instrumento.
+Sem fita adesiva, sem alfinete, sem textura de cortiça, **sem imagem girada** e
+sem moldura de polaroid. Tudo isso lê como scrapbook dos anos 2000 e envelhece
+a ferramenta. Moodboard aqui quer dizer parede de imagem alinhada e densa, não
+colagem.
 
 A boldness está no display da abertura, na densidade da varredura inteira e nas
 imagens hero. Todo o resto é quieto.

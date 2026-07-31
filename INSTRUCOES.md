@@ -1,6 +1,6 @@
 # Radar Visual
 
-Esteira de descoberta visual para a criação da CMLO&CO.
+Esteira de descoberta visual de Gab Tavares.
 
 Você roda a fila. Ela varre, captura, cataloga, cruza, agrupa, pesquisa,
 nomeia e publica um dashboard denso do que está circulando.
@@ -38,6 +38,11 @@ das plataformas, listadas em `fontes.md`. Best of Behance, home do Pinterest,
 site do dia do Awwwards, explore do Are.na. Nenhuma busca. O que essas
 páginas mostram já é o resultado de uma curadoria, editorial ou algorítmica,
 e é exatamente o sinal que interessa quando não há tema.
+
+Toda rodada sem termo de busca e sem foco entra no recorte **`trend`**. É o
+nome fixo dessa modalidade: quando o pedido for "roda sem termo" ou "vê o que
+está acontecendo", o recorte é `trend`, sempre, para o arquivo poder comparar
+uma leitura aberta com a seguinte.
 
 **Com recorte**, tipo "setor de mobile". Aí o recorte vira **filtro aplicado
 dentro das plataformas, antes de qualquer análise**.
@@ -208,6 +213,20 @@ só**, e frase curta. Se você precisar de duas, o resto vai para o contexto.
 
 Escreva o "onde não" sempre. É o que separa prancha útil de mural bonito.
 
+## O arquivo acumula
+
+**Rodada nova nunca substitui rodada velha.** O `docs/index.html` é o arquivo
+inteiro, não o relatório da última rodada. Cada rodada acrescenta blocos, e o
+que já estava lá continua servido.
+
+As rodadas são agrupadas por **mês**, e é por mês e por recorte que a página
+filtra. Isso existe para dar leitura de série: o mesmo recorte em dois meses
+diferentes mostra o que entrou e o que saiu de circulação, que é a única forma
+de a esteira medir movimento em vez de fotografar um instante.
+
+Ao regenerar a página, leia **todas** as rodadas em `rodadas/` e monte tudo.
+Nunca gere só a rodada corrente, e nunca apague peça de rodada anterior.
+
 ## Estrutura de pastas
 
 ```
@@ -217,9 +236,10 @@ radar-visual/
   fontes.md
   nomeados.md
   rodadas/
-    AAAA-MM-DD-<slug>/
-      rodada.md
-      refs/           imagem por peça, nomeada com o bloco
+    AAAA-MM/                    mês, é como o arquivo agrupa
+      AAAA-MM-DD-<slug>/
+        rodada.md
+        refs/         imagem por peça, nomeada com o bloco
 
   docs/
     index.html
