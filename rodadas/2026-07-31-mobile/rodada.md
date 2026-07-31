@@ -91,10 +91,90 @@ categoria já sabe fazer.
 
 ---
 
-## Etapa 2: varredura
+## Etapa 2: varredura — segunda tentativa, com sessão
 
-**Interrompida.** O acesso deslogado não sustenta a meta de 300 a 500 peças.
-Log do que cada fonte devolveu, para a rodada seguinte não repetir o teste.
+Com a extensão do Chrome e a sessão do Gab, o acesso destravou. Números brutos:
+
+| Fonte | Porta | Termos | Peças |
+|---|---|---|---|
+| Pinterest | busca, logado | 23 de 23 | **1090** |
+| Behance | busca, `sort=recommended` | 6 | 672 |
+| Behance | busca, `sort=published_date` | 5 | 600 |
+
+**2362 peças brutas.** A meta de 300 a 500 foi superada com folga. O problema
+da rodada não é volume: é o que tem dentro do volume.
+
+### O parâmetro que quebrava a busca do Behance
+
+Registrado para não custar de novo: `&time=year` ou `&time=month` na URL de
+busca faz o Behance devolver o feed da galeria de design gráfico em vez do
+resultado, com o título da página trocando corretamente e o conteúdo não. Sem o
+parâmetro, a busca funciona. Não é bloqueio, é bug de fallback silencioso.
+
+## Etapas 3 e 4: capturar e olhar
+
+Oito folhas de contato montadas e examinadas, 30 imagens cada: 5 de Pinterest
+(150 peças) e 3 de Behance (90 peças). O que as folhas mostraram derruba a
+rodada, e é isto que precisa ficar registrado.
+
+### Achado 1: termo de universo de produto devolve comércio, não peça aplicada
+
+Nas folhas de `power bank packaging`, `wireless earbuds campaign`, `phone case
+packaging design` e `smartwatch campaign design`, a esmagadora maioria é
+listagem de marketplace e foto de produto de e-commerce: caixa de power bank
+genérica, fone em fundo cinza, capa de celular em blister. É exatamente o que o
+`fontes.md` manda descartar sem ler.
+
+O `INSTRUCOES.md` proíbe termo de técnica porque ele devolve quem vende action.
+Esta rodada descobre o irmão do problema: **termo de universo de produto
+devolve quem vende o produto**. Categoria de produto no Pinterest cai no índice
+de compras, não no de design. Os termos que devolveram peça aplicada foram os
+de linguagem de design e de cultura — `tech brand identity`, `mobile esports
+branding`, `techwear graphic design`, `music streaming campaign design`,
+`flip phone y2k aesthetic`.
+
+Correção para a próxima rodada com recorte: derivar os termos do universo, como
+manda a etapa 1, mas **qualificar cada um com o registro da peça** — identidade,
+cartaz, campanha, embalagem, capa — em vez de deixar o nome do produto sozinho.
+
+### Achado 2: nenhum dos dois sorts do Behance serve a radar
+
+`sort=recommended` sem filtro de tempo ordena por acumulado histórico e devolve
+acervo de 2014 a 2016: OnePlus 2, Xolo, Coolpad, capa de iPhone 5, embalagem
+Belkin. `sort=published_date` devolve o que subiu ontem, que é sobretudo kit de
+social media, peça gerada por IA e material de curso. Um tem qualidade sem
+recência, o outro recência sem qualidade, e o filtro de tempo que resolveria
+está quebrado (achado acima).
+
+### Achado 3: o que trava a etapa 5 de verdade — autoria
+
+Dos 1090 pins do Pinterest, **106 têm qualquer link de saída. 10%.** E os
+domínios mais frequentes entre esses 106 são `s.shopee.com.br` e sites de
+reserva de hotel — comércio, não criador.
+
+Isso significa que cerca de 90% do volume da rodada não tem autor nem link do
+original, e a etapa 3 manda gravar os dois sempre. Pior: a etapa 5 exige
+**mínimo de 3 autores diferentes por grupo**, com a justificativa de que dois é
+coincidência. Sem autor não há como verificar essa regra. Um grupo montado com
+peças sem atribuição não é um agrupamento fraco — é um agrupamento que não pode
+ser auditado, e a regra dos 3 autores existe exatamente para impedir isso.
+
+O `fontes.md` admite Pinterest como fonte inclusive sem atribuição, e isso
+segue valendo para uma peça isolada que entra num grupo sustentado por outras
+com autoria. Não vale para um grupo inteiro.
+
+## Etapa 5: não executada
+
+Interrompida antes de agrupar, por decisão de método e não por falta de
+material. Agrupar 240 peças examinadas em que 90% não tem autor produziria
+blocos que a própria regra dos 3 autores rejeita, e o dashboard os exibiria com
+a mesma cara de bloco verificado. Ver a conversa com o Gab para a decisão.
+
+---
+
+## Log da primeira tentativa, deslogada
+
+Mantido como registro. O acesso deslogado não sustentava a rodada.
 
 | Fonte | Porta testada | Resultado |
 |---|---|---|
