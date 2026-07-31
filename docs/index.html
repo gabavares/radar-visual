@@ -8,10 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;500&display=swap" rel="stylesheet">
+<script>try{var _t=localStorage.getItem("rv-theme");if(_t==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
 <style>
-:root{--paper:#FFFFFF;--card:#F7F6F3;--ink:#17181D;--muted:#79757F;--line:#E6E3DD;--accent:#D8402A;
+:root{--paper:#FAFAFA;--card:#F2F1EF;--ink:#17181D;--muted:#6F6C75;--line:#E4E2DE;--accent:#D8402A;--lbbg:rgba(250,250,250,.97);--shadow:rgba(23,24,29,.22);
 --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;
 --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;--bar:48px}
+:root[data-theme="dark"]{--paper:#16171A;--card:#212327;--ink:#F2F1EE;--muted:#9C99A3;--line:#2D2F35;--accent:#FF6A52;--lbbg:rgba(22,23,26,.97);--shadow:rgba(0,0,0,.55)}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}a:hover{color:var(--accent)}
@@ -57,6 +59,10 @@ a{color:inherit}a:hover{color:var(--accent)}
 .tools input:focus{border-color:var(--accent);outline:none}
 .tg{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:8px 11px;cursor:pointer;white-space:nowrap}
 .tg[aria-pressed=true]{color:var(--accent);border-color:var(--accent)}
+.theme[aria-pressed=true]{color:var(--muted);border-color:var(--line)}
+.theme span[data-d]{display:none}
+:root[data-theme="dark"] .theme span[data-l]{display:none}
+:root[data-theme="dark"] .theme span[data-d]{display:inline}
 /* bloco */
 .blk{padding:88px 0 0;border-top:1px solid var(--line);margin-top:56px}
 .blk:first-of-type{border-top:0;margin-top:10px}
@@ -104,11 +110,11 @@ a{color:inherit}a:hover{color:var(--accent)}
 @media(max-width:1400px){.mood--all{column-count:5}}
 @media(max-width:1100px){.mood--all{column-count:4}}
 @media(max-width:760px){.mood--all{column-count:3}}
-.lb{position:fixed;inset:0;z-index:90;display:none;background:rgba(245,242,235,.97);padding:26px;align-items:center;justify-content:center;opacity:0}
+.lb{position:fixed;inset:0;z-index:90;display:none;background:var(--lbbg);padding:26px;align-items:center;justify-content:center;opacity:0}
 .lb.on{display:flex;opacity:1;transition:opacity .25s ease}
 .lb figure{margin:0;max-width:100%;max-height:100%;text-align:center;transform:scale(.985);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
 .lb.on figure{transform:none}
-.lb img{max-width:100%;max-height:80vh;width:auto;height:auto;display:block;margin:0 auto;background:var(--card);box-shadow:0 24px 64px rgba(23,24,29,.22)}
+.lb img{max-width:100%;max-height:80vh;width:auto;height:auto;display:block;margin:0 auto;background:var(--card);box-shadow:0 24px 64px var(--shadow)}
 .lb figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:16px}
 .lb figcaption a{color:var(--ink)}
 .lbx{position:absolute;top:16px;right:20px;background:none;border:0;color:var(--muted);font-family:var(--mono);font-size:12px;cursor:pointer;padding:8px}
@@ -131,7 +137,7 @@ a{color:inherit}a:hover{color:var(--accent)}
 <header class="wrap mast" id="topo">
 <h1>Radar<em>Visual</em></h1>
 <p class="sub"><span>ARQUIVO <b>11 BLOCOS</b></span><span>PEÇAS <b>247</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>1</b></span><span>GAB TAVARES</span></p>
-<p class="stamp">Última atualização &nbsp;<b>2026-07-31 03:54</b></p>
+<p class="stamp">Última atualização &nbsp;<b>2026-07-31 03:59</b></p>
 </header>
 <div class="mosaic" id="mosaico">
 <div class="mrow" style="--d:92s;--mh:132px">
@@ -312,7 +318,8 @@ a{color:inherit}a:hover{color:var(--accent)}
 </ul>
 <div class="tools"><label class="sr" for="q">Buscar</label>
 <input id="q" type="search" placeholder="filtrar" autocomplete="off">
-<button class="tg" id="tg" type="button" aria-pressed="false">só emergentes</button></div>
+<button class="tg" id="tg" type="button" aria-pressed="false">só emergentes</button>
+<button class="tg theme" id="theme" type="button" aria-pressed="false" aria-label="Alternar modo claro e escuro"><span data-l>escuro</span><span data-d>claro</span></button></div>
 </nav>
 <main>
 <section class="blk blk--em" id="ilha-em-close" data-em="true" data-rec="mobile" data-mes="2026-07" data-hay="Ilha em close O módulo de câmera ocupa o quadro inteiro em foco raso, e o aparelho sai de cena. Da ilha circular que a Xiaomi criou com a Leica em 2022 e que Oppo e Vivo copiaram no ano seguinte. Sensor de uma polegada exige profundidade, a saliência virou ostentação e a peça passou a fotografá-la como joia. Lançamento de aparelho, acessório óptico e qualquer marca que venda precisão como argumento. Marca que precise parecer leve ou barata, porque o close de metal usinado comunica peso e preço. mobile OnePlus Nord N20 Realme P4 Pro Redmi Note 13 OPPO Find, microscópio 30x Fairphone 6, módulos">
@@ -951,6 +958,12 @@ var li=navMap[s.id];if(li)li.className=hit?"":"off";});
 pcs.forEach(function(p){var hit=okRec(p.getAttribute("data-rec"))&&okMes(p.getAttribute("data-mes"))&&(!t||p._h.indexOf(t)>-1);p.classList.toggle("off",!hit);});
 tiles.forEach(function(m){m.classList.toggle("off",!(okRec(m.getAttribute("data-rec"))&&okMes(m.getAttribute("data-mes"))));});
 empty.classList.toggle("on",!any);}
+var th=document.getElementById("theme");
+function syncTheme(){var d=document.documentElement.getAttribute("data-theme")==="dark";th.setAttribute("aria-pressed",d?"true":"false");}
+syncTheme();
+th.addEventListener("click",function(){var d=document.documentElement.getAttribute("data-theme")==="dark";
+if(d){document.documentElement.removeAttribute("data-theme")}else{document.documentElement.setAttribute("data-theme","dark")}
+try{localStorage.setItem("rv-theme",d?"light":"dark")}catch(e){}syncTheme();});
 q.addEventListener("input",filter);
 tg.addEventListener("click",function(){state.em=!state.em;tg.setAttribute("aria-pressed",state.em?"true":"false");filter()});
 })();

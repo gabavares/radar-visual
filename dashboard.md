@@ -55,17 +55,44 @@ excedente pertence ao contexto.
 
 ## Paleta
 
+**Modo claro**, que é o padrão:
+
 ```
---paper       #FFFFFF   fundo, branco puro
+--paper       #FAFAFA   fundo
+--card        #F2F1EF   campo de input e botão
 --ink         #17181D   texto principal
---muted       #79757F   rótulos, créditos, metadados
---line        #E6E3DD   divisores e bordas
+--muted       #6F6C75   rótulos, créditos, metadados
+--line        #E4E2DE   divisores e bordas
 --accent      #D8402A   emergente, filtro ativo, link em hover
 ```
 
-Branco puro, sem creme e sem textura. A página é galeria: a cor tem que vir das
-peças, e qualquer tom no fundo entra na conta e suja a leitura de paleta. A
-peça entra direto sobre o branco, sem cartão e sem sombra.
+**Modo escuro**, no atributo `data-theme="dark"` da raiz:
+
+```
+--paper       #16171A   cinza escuro quase preto
+--card        #212327
+--ink         #F2F1EE   quase branco
+--muted       #9C99A3
+--line        #2D2F35
+--accent      #FF6A52   vermelhão aberto, para segurar contraste no escuro
+```
+
+Sem branco puro nem preto puro em nenhum dos dois: a página é galeria, a cor
+tem que vir das peças, e extremo de luminância no fundo cansa a vista e falseia
+a leitura de paleta. A peça entra direto sobre o fundo, sem cartão e sem sombra.
+
+O acento **muda** entre os modos, e isso não é enfeite: `#D8402A` sobre escuro
+cai para perto do mínimo, então o modo escuro abre para `#FF6A52`. Todos os
+pares medidos passam de AA — texto 15,9:1, metadado 6,4:1, acento 6,4:1.
+
+**Botão de tema** à direita da barra fixa, junto dos outros controles, escrito
+em mono: diz *escuro* quando está claro e *claro* quando está escuro, ou seja,
+nomeia o destino e não o estado. A escolha grava em `localStorage` e é relida
+por um script inline no `<head>`, antes da primeira pintura, senão a página
+pisca branca antes de escurecer.
+
+Claro é o padrão. Não seguimos `prefers-color-scheme`: quem quiser escuro
+clica, e a partir daí a preferência é dele.
 
 O acento aparece pouco: bloco emergente, filtro ativo, link em hover, e a
 segunda linha do nome na abertura.
