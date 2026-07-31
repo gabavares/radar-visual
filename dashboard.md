@@ -7,16 +7,24 @@ Precisa aguentar 200 imagens e 10 blocos sem travar.
 
 ## A tese
 
-O valor da rodada é o agrupamento, e agrupamento só se defende mostrando as
-peças juntas. Então a página abre com as peças, não com palavra.
+A página é um **moodboard**, não um relatório. Parede de imagens que se olha
+em pé, com o texto entrando só onde precisa defender um agrupamento.
 
-O hero não é título nem estatística: é a **malha completa da varredura**.
-Todas as peças aproveitadas, em miniatura, coladas umas nas outras, ocupando
-a tela ao carregar. Antes de qualquer palavra, a pessoa vê o conjunto de onde
-os blocos foram tirados.
+Três camadas, nesta ordem:
 
-Os blocos abaixo são recortes dessa malha. A malha existe para que o recorte
-possa ser conferido: quem duvidar de um bloco rola para cima e olha o resto.
+**Abertura.** Nome grande em display e os números da rodada em mono. Abaixo,
+uma faixa de miniaturas em cartão branco levemente giradas, deslizando devagar
+e sem fim. É o cheiro da rodada antes de qualquer conteúdo.
+
+**Blocos.** Cada um abre com uma **imagem hero** grande, da própria rodada, com
+o nome do bloco em display por cima. Depois vêm as cinco linhas e as peças.
+
+**A varredura inteira.** Fecha a página com **tudo que foi coletado, sem
+filtrar nada para fora** — inclusive o que não virou bloco e o que foi
+descartado na etapa 4. É o que permite conferir o recorte: quem duvidar de um
+bloco rola até o fim e olha o material bruto de onde ele saiu.
+
+Os blocos são leitura de curador; a varredura inteira é a prova.
 
 ## A regra de texto
 
@@ -48,16 +56,20 @@ excedente pertence ao contexto.
 ## Paleta
 
 ```
---void        #0D0F1A   fundo
---surface     #161A2B   painéis e barras
---edge        #252A3D   divisores
---paper       #E8E6E1   texto principal
---muted       #8A90A6   rótulos, créditos, metadados
---live        #46D6A4   estado ativo e destaque de emergente
+--paper       #F5F2EB   fundo, papel quente
+--card        #FFFFFF   cartão da peça
+--ink         #17181D   texto principal
+--muted       #79757F   rótulos, créditos, metadados
+--line        #E3DED4   divisores e bordas
+--accent      #D8402A   emergente, filtro ativo, link em hover
 ```
 
-Fundo escuro porque as peças precisam brilhar e o fundo precisa sumir. O
-acento aparece pouco: bloco emergente, filtro ativo, link em hover.
+Fundo claro e quente, de papel, porque a página é parede de moodboard e não
+projeção. A peça ganha um cartão branco com sombra, que a separa do fundo e
+faz a parede parecer impressa em vez de renderizada.
+
+O acento aparece pouco: bloco emergente, filtro ativo, link em hover, e a
+segunda linha do nome na abertura.
 
 ## Tipografia
 
@@ -70,24 +82,38 @@ linhas parecerem uma ficha e não um texto.
 
 ## Estrutura
 
-**Malha da varredura.** Ocupa a primeira dobra. Miniaturas de 120 a 160px,
-gutter de 2px, sem legenda, sem moldura. Corta na dobra sugerindo continuação,
-não termina redondo.
+**Abertura.** Nome da ferramenta em display enorme, caixa alta, duas linhas,
+a segunda no acento. Abaixo, em mono: recorte da rodada, data, coletadas, na
+página, grupos. Cinco números soltos, sem cartão e sem ícone.
 
-Sobreposto num canto, em mono pequeno: recorte da rodada, data, coletadas,
-aproveitadas, grupos. Cinco números soltos, sem cartão e sem ícone.
+Depois, a **faixa**: miniaturas de 170px em cartão branco, giradas de um grau
+para um lado e para o outro, deslizando na horizontal em laço contínuo. Pausa
+no hover. Some com `prefers-reduced-motion`. É decoração honesta — são peças
+da rodada, não stock.
+
+**Imagem hero do bloco.** Uma peça do próprio bloco, grande, com véu escuro no
+pé e o nome em display por cima em branco. Move um pouco mais devagar que a
+página, no máximo 7%. É o único parallax da página e ele é sutil de propósito.
 
 **Barra de blocos.** Fixa ao rolar. Lista horizontal de todos os blocos em
 mono, emergentes primeiro e marcados com o acento. Clique salta. Se a lista
 não couber, ela rola horizontalmente, sem quebrar em duas linhas.
 
-**Bloco.** Duas colunas assimétricas. À esquerda, um terço: nome em display,
-tipo, se o nome é inventado, em quantas fontes apareceu, as cinco linhas e o
-link de contexto. Fica fixa enquanto o bloco rola. À direita, as peças em
-masonry denso, gutter pequeno, imagens encostando.
+**Bloco.** Abaixo do hero, duas colunas assimétricas. À esquerda, coluna
+estreita e fixa: as cinco linhas rotuladas, cada uma separada por um fio, e o
+link de contexto. À direita, as peças em moodboard.
 
-Bloco emergente ganha o nome maior e um fio do acento na borda esquerda.
-Consolidado vem menor e sem fio. Sem badge colorida, sem etiqueta.
+O tipo, a origem do nome, a contagem de fontes e de peças ficam no hero, em
+mono, acima do nome. Bloco emergente marca o nome com um ponto no acento e
+tinge essa linha de metadado. Sem badge colorida, sem etiqueta.
+
+**Moodboard.** Colunas de CSS, gutter de 20px. Cada peça é um cartão branco
+com respiro em volta, sombra baixa e uma rotação de menos de um grau que
+alterna. No hover o cartão se endireita, sobe 7px, a sombra abre e a imagem
+dá um zoom de 3%. É o gesto que faz a parede parecer manipulável.
+
+**A varredura inteira.** Mesma linguagem de cartão, em colunas mais estreitas
+e seis por vez. Todas as peças coletadas, sem exceção. Legenda menor.
 
 O bloco de avulsas fecha a página. No lugar das cinco linhas, uma só,
 dizendo que são peças que não rimaram com nada e que é onde costuma aparecer
@@ -113,24 +139,42 @@ para mostrar só emergentes. Nada além disso.
 
 Não negociável, porque o volume quebra a página se for ignorado.
 
-- Thumbs de até 300px na malha e nos masonries; full só no lightbox
+- Thumbs de até 300px na faixa e nos moodboards; full só no hero e no lightbox
 - `loading="lazy"` em tudo abaixo da primeira dobra
 - `width` e `height` declarados em toda imagem, para não haver salto de layout
 - Masonry em CSS columns ou grid, sem biblioteca de JS
-- A malha renderiza progressivamente, não espera tudo carregar
+- A página renderiza progressivamente, não espera tudo carregar
+- O parallax passa por `requestAnimationFrame` e o listener de scroll é
+  `passive`, senão o scroll trava com a varredura inteira carregada
 
 ## Movimento
 
-Miniaturas entram em cascata rápida no load, uma vez. Hover acende sem escala.
-Contexto expande deslizando. Lightbox abre em fade.
+O movimento é parte da direção de arte aqui, mas todo ele é lento e nenhum
+chama atenção para si.
 
-Nada pulsa, nada flutua, sem parallax. `prefers-reduced-motion` desliga tudo
-e a página continua inteira.
+- **Entrada por scroll.** Cada elemento sobe 26px e aparece, em cascata de até
+  320ms dentro do mesmo grupo. Uma vez só, sem repetir na volta.
+- **Hero com parallax de 7%.** Sutil o bastante para dar profundidade sem dar
+  enjoo.
+- **Faixa de abertura em laço**, devagar, pausando no hover.
+- **Cartão no hover:** endireita, sobe, sombra abre, imagem em 3%.
+- **Contexto** expande deslizando, com a seta girando 90 graus.
+- **Lightbox** abre em fade com a figura crescendo de 98,5% para 100%.
+
+Nada pulsa e nada flutua sozinho na tela parada.
+
+`prefers-reduced-motion` desliga tudo, inclusive o laço e o parallax, e a
+página continua inteira.
+
+**Regra dura:** o estado escondido do reveal só pode entrar no documento junto
+com o script que sabe desfazê-lo. Se o JS não rodar, a página tem que aparecer
+inteira. Já quebrou uma vez por causa disso: `opacity:0` no CSS deixou a
+página em branco onde o observer não subiu.
 
 ## Quality floor
 
-- Responsivo até 360px. No mobile a malha vira faixa de altura fixa com
-  scroll horizontal e a coluna de defesa vai para cima do masonry
+- Responsivo até 360px. No mobile a coluna de defesa vai para cima do
+  moodboard, o hero encolhe para 46vh e a faixa segue rolando
 - Foco de teclado visível em peça, bloco, contexto e busca
 - Contraste AA no texto
 - Alt descrevendo a peça
@@ -141,4 +185,9 @@ Sem gradiente animado. Sem glassmorphism na interface, que seria usar uma
 estética catalogada como decoração da ferramenta que cataloga. Sem contador
 animado, sem cartão de estatística, sem parágrafo visível em repouso.
 
-A boldness está na malha de abertura e na densidade. Todo o resto é quieto.
+Sem fita adesiva, sem alfinete, sem textura de cortiça. O moodboard se faz com
+cartão branco, sombra e uma rotação de menos de um grau — passar disso vira
+scrapbook e a ferramenta perde a cara de instrumento.
+
+A boldness está no display da abertura, na densidade da varredura inteira e nas
+imagens hero. Todo o resto é quieto.
