@@ -29,9 +29,26 @@ Antes da primeira busca, nesta ordem:
 2. `select_browser` com o `deviceId` que voltou.
 3. Abra `https://br.pinterest.com/` e confirme que está logado: sem muro de
    login e com avatar de perfil na página. Deslogado, o Pinterest não serve.
-4. Abra uma busca no Behance e confirme que o resultado casa com o termo. Se a
-   barra mostrar `Acesse behance.net`, está deslogado — funciona assim, mas
-   throttla rápido; avise o Gab.
+4. Abra uma busca no Behance e confirme duas coisas: que há avatar de conta
+   Adobe e que o resultado casa com o termo buscado.
+
+### Como saber se o Behance está logado
+
+O sinal confiável é o avatar vindo da Adobe:
+
+```js
+!!document.querySelector('img[src*="pps.services.adobe.com/api/profile"]')
+```
+
+**Não use texto da barra para isto.** Dois enganos já cometidos e corrigidos:
+`Acesse behance.net` é link de topo entre produtos Adobe e aparece logado ou
+não; `Experimente grátis` é upsell do Behance Pro e aparece para conta gratuita
+logada. Nenhum dos dois distingue coisa alguma.
+
+O sinal de que a busca degradou é outro e vale checar durante a etapa 2: se os
+resultados deixarem de casar com o termo e virarem sempre a mesma lista, o
+Behance entrou em fallback. O título da página continua trocando certo, então só
+o conteúdo denuncia.
 
 Se qualquer passo falhar, **pare e diga**. Rodada deslogada não é rodada menor,
 é rodada que mente sobre o campo que varreu.
