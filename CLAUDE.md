@@ -67,6 +67,32 @@ Se qualquer passo falhar, **pare e diga**. Rodada deslogada não é rodada menor
 - **Scripts gerados.** O `docs/index.html` é gerado por script PowerShell. Salve
   o `.ps1` com BOM UTF-8, senão o 5.1 lê como ANSI e quebra nos acentos.
 
+## Como a página é gerada
+
+`docs/index.html` **não se edita à mão.** Ele é gerado por `gerador/build.ps1`
+a partir de dois arquivos de dados:
+
+- `gerador/pecas.json` — uma linha por peça: `file`, `t` (título), `fonte`,
+  `link`, `rec` (recorte), `mes`, `g` (bloco; vazio = só aparece na varredura).
+- `gerador/blocos.json` — uma entrada por bloco: as cinco linhas, o contexto,
+  tipo, origem do nome, recorte e mês.
+
+Para publicar uma rodada nova:
+
+1. Baixe as imagens para `docs/assets/full` (até 1200px) e `docs/assets/thumb`
+   (até 300px), com o nome igual ao campo `file`. Copie a full para
+   `rodadas/AAAA-MM/<rodada>/refs/`.
+2. Acrescente as peças em `pecas.json` e o bloco em `blocos.json`.
+   **Acrescente, não substitua.**
+3. `powershell -ExecutionPolicy Bypass -File gerador\build.ps1`
+
+O script lê **todas** as peças e monta o arquivo inteiro, então o histórico se
+preserva sozinho. Bloco novo que não esteja na ordem curada entra no fim, antes
+das avulsas, em vez de sumir.
+
+O `build.ps1` precisa continuar salvo em **UTF-8 com BOM**. Sem BOM o
+PowerShell 5.1 lê como ANSI e quebra em todo acento.
+
 ## Publicação
 
 `docs/` é servido pelo GitHub Pages em https://gabavares.github.io/radar-visual/
