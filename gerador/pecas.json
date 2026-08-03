@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "file":  "b-00",
         "t":  "ClauseOS Compliance",
@@ -2221,5 +2221,1058 @@
         "rec":  "trend",
         "mes":  "2026-07",
         "g":  "avulsas-trend"
+    },
+    {
+        "file":  "pop-03",
+        "t":  "iPhone 17 Pro, cartaz de lançamento",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/422281212736819/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "tipo-atras-do-produto"
+    },
+    {
+        "file":  "pop-19",
+        "t":  "iPhone 15, pastilhas em arco",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/15199717492123395/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-24",
+        "t":  "Aparelho no arreio do burro",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/26106872838020730/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-35",
+        "t":  "Galaxy em salto com adesivos",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3237030978743014/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "corpo-em-suspensao"
+    },
+    {
+        "file":  "pop-39",
+        "t":  "Aparelho sobre a palma, laranja",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3096293490405319/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-70",
+        "t":  "Redmi sobre fundo vermelho",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/2674081024276202/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-79",
+        "t":  "HONOR em lilás",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/19844054605918301/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pob-00",
+        "t":  "Portfólio de Jonny Czar",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/159150041/Jonny-Czar-Portfolio-2024",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-01",
+        "t":  "Bookify, app de livros",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/82716913/Bookify-Bringing-acclimated-books-right-to-your-phone",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-02",
+        "t":  "Worldpackers Experiences",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/60173777/Worldpackers-Experiences-Brand-and-App-Design-UX-UI",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-03",
+        "t":  "RedMagic 9 Pro, anúncio",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/243199547/RedMagic-9-Pro-GAMING-Smartphone-Advertisement",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-04",
+        "t":  "Copa Mundial 2026, série de cartazes",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/251865883/COPA-MUNDIAL-2026-National-Poster-Series",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "tipo-atras-do-produto"
+    },
+    {
+        "file":  "pob-05",
+        "t":  "N26, transações",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/159305455/N26-Transactions-Home-Page",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-06",
+        "t":  "Whiteboard challenge",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/160126303/Whiteboard-Challenge-Explained",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-07",
+        "t":  "Instagram bank poster",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/252454973/instagram-bank-poster",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-08",
+        "t":  "Phone Cleaner",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/253713709/Phone-Cleaner-Mobile-App",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-09",
+        "t":  "TARFA, cartaz de filme",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/247022885/TARFA-Movie-Poster",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-10",
+        "t":  "Grade de cartazes de varejo de celular",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/252327431/Creative-Mobile-Phone-Advertisement-Posters",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pob-11",
+        "t":  "iPhone 12 Pro sobre concreto",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/252188305/Iphone-12-Pro",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-12",
+        "t":  "Galaxy, prancha de posts",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/233475797/Mobile-Phone-Social-Media-Post-Design",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-13",
+        "t":  "Restaurante grego Spileo",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/253286317/grecheskij-restoran-spileo",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-14",
+        "t":  "Masafi, app de e-commerce",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/242680901/Masafi-E-commerce-Mobile-App-UI-Case-Study",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-15",
+        "t":  "Chich Shck, pedido pelo app",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/251769609/Chich-Shck",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-16",
+        "t":  "Tech Online Poster",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/247144939/Tech-Online-Poster",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pob-17",
+        "t":  "Galaxy S26 Ultra, ficha técnica",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/252243523/galaxy-s26-ultra",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pob-18",
+        "t":  "pynai, app",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/252995061/pynai-App-design",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-19",
+        "t":  "ROOMZ, app",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/253073865/Mobile-app-ROOMZ",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-20",
+        "t":  "OPPO em preto e branco",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/183238639/OPPO",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-21",
+        "t":  "OnePlus Nord CE4 Lite, oferta",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/211022861/Facebook-sale-poster-design",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pob-22",
+        "t":  "Cartaz de celular com tubarão",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/45004507/Creative-Mobile-Phone-Poster",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pob-23",
+        "t":  "HuseynTelecom, acessórios",
+        "fonte":  "Behance",
+        "link":  "https://www.behance.net/gallery/241486885/HuseynTelecom-Mobil-Phone-Accessory",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-00",
+        "t":  "iPhone 16 Plus em azul",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/31243791161497067/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-01",
+        "t":  "iPhone laranja sobre alfaiataria",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/347551296266704560/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-02",
+        "t":  "Samsung, aparelho erguido em laranja",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/9288742977716435/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-04",
+        "t":  "iPhone 17 Pro em laranja",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3237030979201062/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-05",
+        "t":  "iPhone Air em azul",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/5277724560279342/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-06",
+        "t":  "iPhone 17 Pro, cartaz PRO",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/422281212713445/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-07",
+        "t":  "Black Weeks, janado",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/8233211829557193/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-08",
+        "t":  "Aparelho preto sobre lilás",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/1688918607500217/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-09",
+        "t":  "Nothing Phone 2a Plus",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/96123773297001188/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-10",
+        "t":  "Chronline, aparelho e fone",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/42221315255543497/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-11",
+        "t":  "iPhone sobre pele e sombra",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/1688918607500232/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-12",
+        "t":  "CMF Phone 2 Pro",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/78883430969279495/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-13",
+        "t":  "vivo Y31d, bota no deserto",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/65724475808374145/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "corpo-em-suspensao"
+    },
+    {
+        "file":  "pop-14",
+        "t":  "iPhone 17 Pro em laranja e preto",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/213358101091805757/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "tipo-atras-do-produto"
+    },
+    {
+        "file":  "pop-15",
+        "t":  "Redmi Note 13 Series",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/290200769763023047/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-16",
+        "t":  "Redmi K90 Max",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/45387908741348597/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-17",
+        "t":  "Huawei P40, duas mãos",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/363384263700664692/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-18",
+        "t":  "Aparelho em primeiro plano sobre roxo",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/8796161769707479/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-20",
+        "t":  "Aparelho rosa em queda",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/13721973862202727/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "corpo-em-suspensao"
+    },
+    {
+        "file":  "pop-21",
+        "t":  "HONOR 400 em salto",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/38421403068430221/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "corpo-em-suspensao"
+    },
+    {
+        "file":  "pop-22",
+        "t":  "OPPO Reno12 Series",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/8936899257810775/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-23",
+        "t":  "Aparelho à beira da piscina",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/19914423348488618/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-25",
+        "t":  "Huawei, proteção contra queda",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/422281212713444/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-26",
+        "t":  "Aparelho branco sobre laranja",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3096293490084543/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-27",
+        "t":  "Huawei Mate30 Pro",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/40110252922114141/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-28",
+        "t":  "vivo V50, retrato Zeiss",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/65724475808383128/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-29",
+        "t":  "iQOO 15, poeira",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/552957660537902497/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-30",
+        "t":  "Aparelho entre duas mãos",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3940718420460024/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-31",
+        "t":  "Studio Finds, luminária",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/9007268002929698/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-32",
+        "t":  "Infinix Note 60 Pro",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/65724475808506746/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-33",
+        "t":  "The Covr, capa transparente",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/64739313390761629/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "tipo-atras-do-produto"
+    },
+    {
+        "file":  "pop-34",
+        "t":  "OPPO Find N6",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/83809243060910896/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-36",
+        "t":  "Aparelho azul no bolso",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/128845239335550952/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-37",
+        "t":  "Aparelho azul e jeans",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/4081455908145337/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-38",
+        "t":  "OPPO A5 Pro, escolha a cor",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/54958057950577084/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-40",
+        "t":  "vivo Y29 na areia",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/418131146677214654/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-41",
+        "t":  "vivo, retrato com cachorro",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/497577458854698347/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-42",
+        "t":  "Aparelho branco sobre madeira",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/5136987070582273/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-43",
+        "t":  "Galaxy Z Fold7, tela grande",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/219269075602580428/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-44",
+        "t":  "Galaxy S26 Ultra, pré-venda",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/173529391888198172/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-45",
+        "t":  "OnePlus, Sexy Food",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/422281211037937/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-46",
+        "t":  "iQOO 15, Monster Inside",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/53972895530166675/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-47",
+        "t":  "iQOO em laranja e azul",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/12173861490035021/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-48",
+        "t":  "Aparelho preto contra o rosto",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/290060032274524997/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "aparelho-contra-a-lente"
+    },
+    {
+        "file":  "pop-49",
+        "t":  "vivo X300 entre mãos",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/33917803439971176/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-50",
+        "t":  "Dedo sob o aparelho",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/19914423348542566/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-51",
+        "t":  "iPhone sobre bolsa",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/191473421654164544/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-52",
+        "t":  "Arctic Blue, aparelho na mochila",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/25051341671716910/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-53",
+        "t":  "iPhone 17 Pro Max, vestido laranja",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/54958057950225891/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-54",
+        "t":  "Galaxy Z Fold5, Join the flip side",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/84935142970209237/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-55",
+        "t":  "vivo, salto de terno",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/50384089577168811/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "corpo-em-suspensao"
+    },
+    {
+        "file":  "pop-56",
+        "t":  "Jack, tipografia",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-57",
+        "t":  "GO!, tela na mão",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/2674081026263725/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-58",
+        "t":  "Aparelho azul na cadeira amarela",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3096293491255065/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-59",
+        "t":  "Aparelho branco sobre tricô azul",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/14918242510824017/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-60",
+        "t":  "vivo V50 em lilás",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/53972895529822793/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-61",
+        "t":  "Aparelho e capa no sofá",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/18155204744274821/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-62",
+        "t":  "Prancha de posts de iPhone",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/123215739807788036/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-63",
+        "t":  "OPPO Find X9",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/53972895530762034/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "tipo-atras-do-produto"
+    },
+    {
+        "file":  "pop-64",
+        "t":  "Aparelho azul e jaqueta azul",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/305892999722669925/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-65",
+        "t":  "Build Your Vision, app iOS",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/190769734213265578/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-66",
+        "t":  "Klarna na mão",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/223702306487264297/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-67",
+        "t":  "Hello March, aparelho na tábua",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/29766047533747955/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-68",
+        "t":  "Electrolux, 100 anos",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-69",
+        "t":  "Quadro e mesa de trabalho",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-71",
+        "t":  "OPPO F31, carregamento reverso",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/195343702584497571/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-72",
+        "t":  "Aparelho no dedo sobre azul",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/10907224091952637/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-73",
+        "t":  "Aparelho lilás em contraluz",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/5770305768504161/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-74",
+        "t":  "Dobrável aberto em cinza",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/65724475808332509/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-75",
+        "t":  "Weeo, aparelho em rosa",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3518505955830864/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-76",
+        "t":  "Color Your World, aparelho rosa",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/492649955119281/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-77",
+        "t":  "Aparelho na cama",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/31947478603747714/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-78",
+        "t":  "Aparelho verde em relevo",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/10696117858513880/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-80",
+        "t":  "Aparelho na areia vermelha",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3237030977419028/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-81",
+        "t":  "Aparelho amarelo e roupa amarela",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/15129348745408125/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-82",
+        "t":  "Apple Pay, Ding. Done.",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/211174979201108/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "cartaz-de-interface"
+    },
+    {
+        "file":  "pop-83",
+        "t":  "OnePlus verde contra o rosto",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/319544536086637734/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-84",
+        "t":  "Aparelho no dedo sobre rosa",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/37576978137784565/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "mao-sem-corpo"
+    },
+    {
+        "file":  "pop-85",
+        "t":  "Aparelho azul na alça",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/81487074501128223/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "colorway-vestido"
+    },
+    {
+        "file":  "pop-86",
+        "t":  "OPPO, Smarten Up Your Life",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/45317539998461339/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-87",
+        "t":  "vivo S16, retrato com cachorro",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/15058979997925929/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-88",
+        "t":  "Aplicativo em cena doméstica",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-89",
+        "t":  "PRO em luz sobre preto",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/621426448631666387/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "tipo-atras-do-produto"
+    },
+    {
+        "file":  "pop-90",
+        "t":  "Aparelho no bolso da calça",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/19210735906012564/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  ""
+    },
+    {
+        "file":  "pop-91",
+        "t":  "Huawei Pro Art na água",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/38632509300678903/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
+    },
+    {
+        "file":  "pop-92",
+        "t":  "Módulo de câmera dourado",
+        "fonte":  "Pinterest",
+        "link":  "https://br.pinterest.com/pin/3588874698427636/",
+        "rec":  "mobile",
+        "mes":  "2026-08",
+        "g":  "avulsas-poster"
     }
 ]

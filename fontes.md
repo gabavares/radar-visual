@@ -106,6 +106,16 @@ gênero do relatório tem tratamento visual próprio e virou bloco catalogado.
 Use quando quiser esse material. Para ver estética aplicada em vez de anunciada,
 entre pelas páginas de curadoria.
 
+**Sobre a palavra `poster` como termo.** Testado em 2026-08-03 com `mobile phone
+poster`: no Pinterest funciona muito bem e devolve cartaz de lançamento quase
+puro, 93 de 95 pins aplicados. No Behance desanda — metade da primeira página é
+estudo de caso de app e capa de portfólio.
+
+A explicação é a indexação: o Pinterest indexa imagem e o Behance indexa
+projeto, e projeto de app tem cartaz dentro. Termo de formato de peça só filtra
+onde a unidade indexada é a peça. Vale para `poster`, `packaging`, `capa` e
+qualquer outro nome de formato.
+
 **Sobre atribuição no Pinterest.** A maioria dos pins não tem autor nem link do
 original, e isso **não** desqualifica a peça. O Pinterest é fonte de Camada 1
 inclusive sem atribuição, e um pin sem crédito sustenta grupo como qualquer

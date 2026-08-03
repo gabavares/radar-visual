@@ -18,6 +18,12 @@ de fora usar o mesmo termo.
 | Vitrine preta com fio de luz | inventado | consolidado | 2026-07-31-mobile | Vitrine preta com fio de luz |
 | Mão-e-aparelho em cor chapada | inventado | consolidado | 2026-07-31-mobile | Mão-e-aparelho em cor chapada |
 | Maquete flutuante em cor chapada | consagrado (floating mockup) | consolidado | 2026-07-31-mobile | Maquete flutuante em cor chapada |
+| Colorway vestido | consagrado (color drenching) | emergente | 2026-08-03-mobile-poster | Colorway vestido |
+| Aparelho contra a lente | inventado | emergente | 2026-08-03-mobile-poster | Aparelho contra a lente |
+| Cartaz feito de interface | inventado | emergente | 2026-08-03-mobile-poster | Cartaz feito de interface |
+| Corpo em suspensão | inventado | emergente | 2026-08-03-mobile-poster | Corpo em suspensão |
+| Mão sem corpo | consagrado (disembodied hand) | consolidado | 2026-08-03-mobile-poster | Mão sem corpo |
+| Palavra atrás do produto | consagrado (layered type) | consolidado | 2026-08-03-mobile-poster | Palavra atrás do produto |
 
 ## Nomes perseguidos que não fecharam bloco
 

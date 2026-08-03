@@ -33,7 +33,7 @@ $total = $pieces.Count
 
 # ordem curada dos blocos. Bloco novo que nao esteja aqui entra no fim,
 # antes das avulsas, para nunca sumir da pagina por esquecimento.
-$ordemCurada = @('ilha-em-close','marca-palavra','brasao-revival','vitrine-preta','cromo-liquido','oferta-gritada','mao-e-aparelho','maquete-flutuante','capa-de-relatorio','avulsas-trend','avulsas-mobile')
+$ordemCurada = @('ilha-em-close','marca-palavra','brasao-revival','colorway-vestido','aparelho-contra-a-lente','cartaz-de-interface','corpo-em-suspensao','vitrine-preta','cromo-liquido','tipo-atras-do-produto','mao-sem-corpo','oferta-gritada','mao-e-aparelho','maquete-flutuante','capa-de-relatorio','avulsas-trend','avulsas-mobile','avulsas-poster')
 $todos = @($blocks | ForEach-Object { $_.g })
 $avulsas = @($todos | Where-Object { $_ -like 'avulsas*' })
 $ordem = @()
@@ -216,7 +216,7 @@ W '<body>'
 
 W '<header class="wrap mast" id="topo">'
 W '<h1>Radar<em>Visual</em></h1>'
-W ('<p class="sub"><span>ARQUIVO <b>' + $blocks.Count + ' BLOCOS</b></span><span>PEÇAS <b>' + $total + '</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>1</b></span><span>GAB TAVARES</span></p>')
+W ('<p class="sub"><span>ARQUIVO <b>' + $blocks.Count + ' BLOCOS</b></span><span>PEÇAS <b>' + $total + '</b></span><span>RECORTES <b>MOBILE, TREND</b></span><span>MESES <b>' + $meses.Count + '</b></span><span>GAB TAVARES</span></p>')
 W ('<p class="stamp">Última atualização &nbsp;<b>' + (Get-Date).ToString('yyyy-MM-dd HH:mm') + '</b></p>')
 W '<button class="themebtn" id="theme" type="button"><span data-l>Tema escuro</span><span data-d>Tema claro</span></button>'
 W '</header>'
