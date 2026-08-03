@@ -80,9 +80,23 @@ Percorra o campo definido na etapa 1, página por página.
 Você tem liberdade para usar fontes fora do `fontes.md` se elas servirem
 melhor ao recorte. Registre quais usou.
 
-Use o navegador que renderiza JS. Fetch de HTML puro devolve página vazia na
-maioria dessas fontes. Onde a fonte exigir sessão, rode no Chrome do Gab pela
-extensão, que carrega os logins dele.
+### Etapa 0: conferir o acesso
+
+**A varredura roda no Chrome do Gab, pela extensão, sempre.** Não é preferência
+nem otimização: é a diferença entre varrer o campo e varrer uma versão pobre
+dele. O passo a passo da conferência está no `CLAUDE.md`.
+
+Confira antes da primeira busca. Se não houver navegador conectado, ou se o
+Pinterest aparecer deslogado, **pare e avise**. Nunca caia para o navegador
+interno para "pelo menos entregar alguma coisa": rodada deslogada não é rodada
+menor, é rodada que mente sobre o campo que varreu, e o custo só aparece na
+etapa 5, quando os grupos não fecham.
+
+Isto foi aprendido caro. A primeira tentativa desta esteira rodou deslogada,
+travou na etapa 2 e o log está em `rodadas/2026-07/2026-07-31-mobile/rodada.md`.
+
+Fetch de HTML puro não substitui: devolve página vazia na maioria dessas fontes,
+e no Behance devolve js challenge e depois 403.
 
 **Meta: a primeira página de cada fonte, e só.** Sem scroll infinito, sem
 paginar. O que a plataforma põe na primeira página já é o resultado da
